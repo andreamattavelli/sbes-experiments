@@ -11,7 +11,7 @@ help:
 	"all: runs all the experiments" ; \
 	do echo "$$line" ; done
 
-ITERATIONS:=$(shell seq 1)
+ITERATIONS:=$(shell seq 2)
 TARGET_METHODS:=$(subst [],(),$(shell test -r $(CLASS)/target_methods.txt && cat $(CLASS)/target_methods.txt))
 
 .PHONY: all
@@ -42,8 +42,8 @@ $(foreach method,$(TARGET_METHODS),$(foreach iteration,$(ITERATIONS),$(eval $(ca
 
 #####################
 #### SBES Build.
-####################
-$(SBESROOT)/sbes.jar:
+#####################
+$(SBESJAR):
 	cd $(SBESROOT); \
 	$(ANT); \
 	$(JAR) cf sbes.jar -C bin .

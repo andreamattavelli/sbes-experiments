@@ -42,13 +42,11 @@ $(CLASS)/$(1)/%.log:
 	-test -d '$$(CLASS)/$(1)' || mkdir '$$(CLASS)/$(1)'	
 	cd '$$(CLASS)/$(1)' ; \
 	$$(JAVA) -cp $$(SBESBIN):$$(SBESLIBS) sbes.SBES \
-	--classes=$$(LIBDIR)/$$(JARNAME) \
-	--method=$(1) \
-	--search_budget=$$(SEARCH_BUDGET) \
-	--test_search_budget=$$(TEST_SEARCH_BUDGET) \
-	--junit=$$(JUNIT) \
-	--evosuite=$$(EVOSUITE) \
-	--java=$$(JAVABINDIR) > $$*.log 2>&1
+	-classes=$$(LIBDIR)/$$(JARNAME) \
+	-method='$(1)' \
+	-junit=$$(JUNIT) \
+	-evosuite=$$(EVOSUITE) \
+	-java=$$(JAVABINDIR) > $$*.log 2>&1
 endef
 
 $(foreach method,$(TARGET_METHODS),$(eval $(call run_iteration,$(method))))

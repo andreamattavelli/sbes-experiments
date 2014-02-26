@@ -12,7 +12,7 @@
 ## ROOT PATHS
 ##
 EXPERIMENTS=$(ROOT)/experiments
-LIBS=$(ROOT)/libs
+LIBS=$(ROOT)/libraries
 TOOLS=$(ROOT)/tools
 
 ##
@@ -30,10 +30,10 @@ SHELL:=/bin/bash
 ## JAVA
 ##
 # Linux (research / allegro)
-JAVAROOT=/tools/jdk1.7.0_45
+#JAVAROOT=/tools/jdk1.7.0_45
 # Mac (with java 1.6)
 #JAVAROOT=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents
-#JAVAROOT=/System/Library/Frameworks/JavaVM.framework/Versions/Current
+JAVAROOT=/System/Library/Frameworks/JavaVM.framework/Versions/Current
 
 # set java paths depending on the operating system
 ifeq ($(UNAME),Darwin)
@@ -53,13 +53,13 @@ JAR=$(JAVABINDIR)/jar
 ## 
 ## ANT
 ##
-ANT=/usr/bin/ant
+ANT=/usr/local/bin/ant
 
 
 ##
 ## SBES
 ##
-SBESROOT=../../sbes
+SBESROOT=/Users/alberto/Star_SVN/sbes
 SBESBIN=$(SBESROOT)/bin
 SBESLIBS=$(SBESROOT)/lib/args4j-2.0.21.jar:$(SBESROOT)/lib/javaparser-1.0.10.jar
 SEARCH_BUDGET=
@@ -73,4 +73,4 @@ JUNIT=$(TOOLS)/junit.jar
 ##
 ## EVOSUITE
 ##
-EVOSUITE=$(TOOLS)/evosuite.jar
+EVOSUITE=$(TOOLS)/evosuite-sbes.jar

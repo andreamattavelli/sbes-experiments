@@ -1,6 +1,6 @@
-ROOT=..
+ROOT=$(realpath ..)
 include $(ROOT)/common.mk
-#include conf.mk
+include $(firstword $(subst /, ,$(CLASS)))/conf.mk
 
 #.SILENT:
 
@@ -12,44 +12,23 @@ help:
 	do echo "$$line" ; done
 
 ITERATIONS:=$(shell seq 1)
-RUN_ITERATIONS:=$(ITERATIONS:%=run_%)
-
-CLASS:=graphstream/edge
 TARGET_METHODS:=$(subst [],(),$(shell test -r $(CLASS)/target_methods.txt && cat $(CLASS)/target_methods.txt))
 
 .PHONY: all
 all: run
 
-# run_%:
-# 	@echo "Running SBES on method $(METHODNAME), iteration $*"
-# 	-test -d $@ || mkdir $@
-# 	-cd $@ ; \
-# 	$(JAVA) -cp $(SBESBIN):$(SBESLIBS) sbes.SBES \
-# 	--classes=$(LIBDIR)/$(JARNAME) \
-# 	--method=$(METHODNAME) \
-# 	--search_budget=$(SEARCH_BUDGET) \
-# 	--test_search_budget=$(TEST_SEARCH_BUDGET) \
-# 	--junit=$(JUNIT) \
-# 	--evosuite=$(EVOSUITE) \
-# 	--java=$(JAVABINDIR) > $@.log 2>&1
-
 .PHONY: run
-run: $(foreach method,$(TARGET_METHODS),$(foreach iteration,$(RUN_ITERATIONS),$(CLASS)/$(method)/$(iteration).log))
+run: $(foreach method,$(TARGET_METHODS),$(foreach iteration,$(ITERATIONS),$(CLASS)/$(method)/$(iteration)/log))
 
 define run_iteration
-$(CLASS)/$(1)/%.log:
-	@echo "Running SBES on class $$(CLASS), method $(1), iteration $$*"
-	-test -d '$$(CLASS)/$(1)' || mkdir '$$(CLASS)/$(1)'	
-	cd '$$(CLASS)/$(1)' ; \
-	$$(JAVA) -cp $$(SBESBIN):$$(SBESLIBS) sbes.SBES \
-	-classes=$$(LIBDIR)/$$(JARNAME) \
-	-method='$(1)' \
-	-junit=$$(JUNIT) \
-	-evosuite=$$(EVOSUITE) \
-	-java=$$(JAVABINDIR) > $$*.log 2>&1
+$(CLASS)/$(1)/$(2)/log:
+	@echo "Running SBES on class $$(CLASS), method $(1), iteration $(2)"
+	-test -d '$$(CLASS)/$(1)/$(2)' || mkdir -p '$$(CLASS)/$(1)/$(2)'	
+	cd '$$(CLASS)/$(1)/$(2)' ; \
+	$$(JAVA) -cp $$(SBESBIN):$$(SBESLIBS) sbes.SBES -classes=$$(LIBS)/$$(JARNAME) -method='$(1)' -junit=$$(JUNIT) -evosuite=$$(EVOSUITE) -java=$$(JAVABINDIR) > log 2>&1
 endef
 
-$(foreach method,$(TARGET_METHODS),$(eval $(call run_iteration,$(method))))
+$(foreach method,$(TARGET_METHODS),$(foreach iteration,$(ITERATIONS),$(eval $(call run_iteration,$(method),$(iteration)))))
 
 ## TO UPDATE!
 clean:

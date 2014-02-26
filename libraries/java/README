@@ -1,0 +1,7 @@
+EvoSuite does not support instrumentation of java.* classes.
+
+Therefore, to perform experiments on such classes, we copy-paste the
+source code that ships with Oracle HotSpot JDK 1.7 here and we modify
+the package name:
+
+* java.util.Stack -> stack.util.Stack

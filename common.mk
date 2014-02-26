@@ -59,8 +59,8 @@ ANT=/usr/local/bin/ant
 ##
 ## SBES
 ##
-SBESROOT=/Users/alberto/Star_SVN/sbes
-SBESBIN=$(SBESROOT)/bin
+SBESROOT=$(TOOLS)/sbes
+SBESJAR=$(SBESROOT)/sbes.jar
 SBESLIBS=$(SBESROOT)/lib/args4j-2.0.21.jar:$(SBESROOT)/lib/javaparser-1.0.10.jar
 SEARCH_BUDGET=
 TEST_SEARCH_BUDGET=

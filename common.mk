@@ -50,6 +50,27 @@ JAVA=$(JAVABINDIR)/java
 JAVAC=$(JAVABINDIR)/javac
 JAR=$(JAVABINDIR)/jar
 
+## 
 ## ANT
+##
 ANT=/usr/bin/ant
 
+
+##
+## SBES
+##
+SBESROOT=../../sbes
+SBESBIN=$(SBESROOT)/bin
+SBESLIBS=$(SBESROOT)/lib/args4j-2.0.21.jar:$(SBESROOT)/lib/javaparser-1.0.10.jar
+SEARCH_BUDGET=
+TEST_SEARCH_BUDGET=
+
+##
+## JUNIT
+##
+JUNIT=$(TOOLS)/junit.jar
+
+##
+## EVOSUITE
+##
+EVOSUITE=$(TOOLS)/evosuite.jar

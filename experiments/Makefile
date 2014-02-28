@@ -43,9 +43,12 @@ $(foreach method,$(TARGET_METHODS),$(foreach iteration,$(ITERATIONS),$(eval $(ca
 #####################
 #### SBES Build.
 #####################
-$(SBESJAR):
-	cd $(SBESROOT); \
-	$(ANT); \
+$(SBESROOT):
+	 cd $(TOOLS) && sh downloadTools.sh 
+
+$(SBESJAR): $(SBESROOT)
+	cd $(SBESROOT) ; \
+	$(ANT) ; \
 	$(JAR) cf sbes.jar -C bin .
 
 ## TO UPDATE!

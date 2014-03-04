@@ -11,7 +11,7 @@ help:
 	"all: runs all the experiments" ; \
 	do echo "$$line" ; done
 
-ITERATIONS:=$(shell seq 2)
+ITERATIONS:=$(shell seq 30)
 TARGET_METHODS:=$(subst [],(),$(shell test -r $(CLASS)/target_methods.txt && cat $(CLASS)/target_methods.txt))
 
 .PHONY: all

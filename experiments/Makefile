@@ -57,7 +57,7 @@ $(SBESJAR): $(SBESROOT)
 #####################
 $(EVOSUITEROOT):
 	cd $(TOOLS); \
-	sh downloadTools.sh downloadFromMercurial "evosuite" "https://alberto_goffi@bitbucket.org/gorla/evosuite-sbes"
+	sh downloadTools.sh downloadFromMercurial "evosuite" $(EVOSUITEREPO)
 
 $(EVOSUITEJAR): $(EVOSUITEROOT)
 	cd $(EVOSUITEROOT) ; \

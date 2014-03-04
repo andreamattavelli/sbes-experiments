@@ -80,3 +80,4 @@ JUNIT=$(TOOLS)/junit.jar
 ##
 EVOSUITEROOT=$(TOOLS)/evosuite
 EVOSUITEJAR=$(EVOSUITEROOT)/target/evosuite-sbes-0.1-SNAPSHOT-jar-minimal.jar
+EVOSUITEREPO=https://alberto_goffi@bitbucket.org/gorla/evosuite-sbes

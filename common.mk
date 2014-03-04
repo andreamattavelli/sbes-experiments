@@ -55,6 +55,11 @@ JAR=$(JAVABINDIR)/jar
 ##
 ANT=/usr/local/bin/ant
 
+##
+## MAVEN
+##
+MAVEN=/Users/alberto/Tools/maven-3.2.1/bin/mvn
+
 
 ##
 ## SBES
@@ -73,4 +78,5 @@ JUNIT=$(TOOLS)/junit.jar
 ##
 ## EVOSUITE
 ##
-EVOSUITE=$(TOOLS)/evosuite-sbes.jar
+EVOSUITEROOT=$(TOOLS)/evosuite
+EVOSUITEJAR=$(EVOSUITEROOT)/target/evosuite-sbes-0.1-SNAPSHOT-jar-minimal.jar

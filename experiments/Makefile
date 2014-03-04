@@ -44,12 +44,24 @@ $(foreach method,$(TARGET_METHODS),$(foreach iteration,$(ITERATIONS),$(eval $(ca
 #### SBES Build.
 #####################
 $(SBESROOT):
-	 cd $(TOOLS) && sh downloadTools.sh 
+	cd $(TOOLS); \
+	sh downloadTools.sh downloadFromSVN "sbes" "http://star.inf.usi.ch/repos/code/andrea/sbes"
 
 $(SBESJAR): $(SBESROOT)
 	cd $(SBESROOT) ; \
 	$(ANT) ; \
 	$(JAR) cf sbes.jar -C bin .
+
+#####################
+#### EvoSuite Build.
+#####################
+$(EVOSUITEROOT):
+	cd $(TOOLS); \
+	sh downloadTools.sh downloadFromMercurial "evosuite" "https://alberto_goffi@bitbucket.org/gorla/evosuite-sbes"
+
+$(EVOSUITEJAR): $(EVOSUITEROOT)
+	cd $(EVOSUITEROOT) ; \
+	$(MAVEN) package
 
 ## TO UPDATE!
 .PHONY: clean

@@ -16,7 +16,7 @@ public class AbstractEdgeEvoSuiteTest {
   //Test case number: 0
   /*
    * 1 covered goal:
-   * 1 org.graphstream.graph.implementations.AbstractEdge.getNode0()Lorg/graphstream/graph/Node;: root-Branch
+   * 1 org.graphstream.graph.implementations.AbstractEdge.getNode1()Lorg/graphstream/graph/Node;: root-Branch
    */
 
   @Test
@@ -25,6 +25,7 @@ public class AbstractEdgeEvoSuiteTest {
       SingleNode singleNode0 = new SingleNode(adjacencyListGraph0, "0");
       SingleNode singleNode1 = new SingleNode(adjacencyListGraph0, "1");
       AbstractEdge abstractEdge0 = new AbstractEdge("0", singleNode0, singleNode1, false);
-      SingleNode singleNode = (SingleNode)abstractEdge0.getNode0();
+      SingleNode singleNode = (SingleNode)abstractEdge0.getNode1();
   }
 }
+

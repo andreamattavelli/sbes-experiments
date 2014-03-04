@@ -33,7 +33,9 @@ $(CLASS)/$(1)/$(2)/log: $(SBESJAR) $(EVOSUITEJAR) $(LIBS)/$(JARNAME)
 	@echo "Running SBES on class $$(CLASS), method $(1), iteration $(2)"
 	-test -d '$$(CLASS)/$(1)/$(2)' || mkdir -p '$$(CLASS)/$(1)/$(2)'	
 	cd '$$(CLASS)/$(1)/$(2)' ; \
-	$$(JAVA) -cp $$(SBESJAR):$$(SBESLIBS) sbes.SBES -classes=$$(LIBS)/$$(JARNAME) -method='$(1)' -test_scenario='$$(CLASS)/$(1)/$(2)/initial_scenario/InitialScenario.java'  -junit=$$(JUNIT) -evosuite=$$(EVOSUITEJAR) -java=$$(JAVABINDIR) > log 2>&1
+	$$(JAVA) -cp $$(SBESJAR):$$(SBESLIBS) sbes.SBES -classes=$$(LIBS)/$$(JARNAME) -method='$(1)' \
+		 -test_scenario='../initial_scenario/InitialScenario.java' \
+		 -junit=$$(JUNIT) -evosuite=$$(EVOSUITEJAR) -java=$$(JAVABINDIR) > log 2>&1
 endef
 
 ## This is the "expasion" for the macro defined above.

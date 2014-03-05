@@ -26,7 +26,6 @@
 package stack.util;
 
 import java.util.EmptyStackException;
-import java.util.Vector;
 
 /**
  * The <code>Stack</code> class represents a last-in-first-out

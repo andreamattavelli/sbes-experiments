@@ -29,9 +29,9 @@ run: $(foreach method,$(TARGET_METHODS),$(foreach iteration,$(ITERATIONS),$(CLAS
 ## $(2) is the iteration number
 ##
 define run_iteration
-$(CLASS)/$(1)/$(2)/log: $(SBESJAR) $(EVOSUITEJAR) $(LIBS)/$(JARNAME)
+$(CLASS)/$(1)/$(2)/log: $(SBESJAR) $(EVOSUITEJAR) $(LIBS)/$(JARNAME) $(CLASS)/$(1)/initial_scenario/InitialScenario.java
 	@echo "Running SBES on class $$(CLASS), method $(1), iteration $(2)"
-	-test -d '$$(CLASS)/$(1)/$(2)' || mkdir -p '$$(CLASS)/$(1)/$(2)'	
+	-test -d '$$(CLASS)/$(1)/$(2)' || mkdir -p '$$(CLASS)/$(1)/$(2)'
 	cd '$$(CLASS)/$(1)/$(2)' ; \
 	$$(JAVA) -cp $$(SBESJAR):$$(SBESLIBS) sbes.SBES -classes=$$(LIBS)/$$(JARNAME) -method='$(1)' \
 		 -test_scenario='../initial_scenario/InitialScenario.java' \

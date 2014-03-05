@@ -22,6 +22,6 @@ public class StackEvoSuiteTest {
       Stack<Integer> stack0 = new Stack<Integer>();
       Integer integer0 = new Integer(0);
       boolean boolean0 = stack0.add(integer0);
-      Integer integer1 = stack0.elementAt(0);
+      Integer integer1 = stack0.lastElement();
   }
 }

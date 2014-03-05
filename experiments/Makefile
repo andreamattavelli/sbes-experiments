@@ -65,7 +65,13 @@ $(EVOSUITEJAR): $(EVOSUITEROOT)
 	cd $(EVOSUITEROOT) ; \
 	$(MAVEN) package
 
-## TO UPDATE!
+
+#####################
+#### Clean targets.
+#####################
 .PHONY: clean
 clean:
-	rm -rf run_* org.*
+	$(foreach method,$(TARGET_METHODS),$(shell find $(CLASS)/'$(method)'/* -maxdepth 0 -type d ! -name "initial_scenario" | xargs rm -rf)) 
+
+
+

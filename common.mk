@@ -30,10 +30,10 @@ SHELL:=/bin/bash
 ## JAVA
 ##
 # Linux (research / allegro)
-#JAVAROOT=/tools/jdk1.7.0_45
+JAVAROOT=/tools/jdk1.7.0_05
 # Mac (with java 1.6)
 #JAVAROOT=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents
-JAVAROOT=/System/Library/Frameworks/JavaVM.framework/Versions/Current
+#JAVAROOT=/System/Library/Frameworks/JavaVM.framework/Versions/Current
 
 # set java paths depending on the operating system
 ifeq ($(UNAME),Darwin)
@@ -53,12 +53,12 @@ JAR=$(JAVABINDIR)/jar
 ## 
 ## ANT
 ##
-ANT=/usr/local/bin/ant
+ANT=/usr/bin/ant
 
 ##
 ## MAVEN
 ##
-MAVEN=/Users/alberto/Tools/maven-3.2.1/bin/mvn
+MAVEN=/usr/bin/mvn
 
 
 ##
@@ -66,7 +66,7 @@ MAVEN=/Users/alberto/Tools/maven-3.2.1/bin/mvn
 ##
 SBESROOT=$(TOOLS)/sbes
 SBESJAR=$(SBESROOT)/sbes.jar
-SBESLIBS=$(SBESROOT)/lib/args4j-2.0.21.jar:$(SBESROOT)/lib/javaparser-1.0.10.jar
+SBESLIBS=$(SBESROOT)/lib/args4j-2.0.21.jar:$(SBESROOT)/lib/javaparser-1.0.10.jar:$(SBESROOT)/lib/asm-4.2.jar
 SEARCH_BUDGET=
 TEST_SEARCH_BUDGET=
 

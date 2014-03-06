@@ -8,7 +8,14 @@ include $(firstword $(subst /, ,$(CLASS)))/conf.mk
 help:
 	@for line in \
 	"Main targets to run the experiments:" \
-	"all: runs all the experiments" ; \
+	"all: runs all the experiments on the case study specified in the CLASS parameter." ; \
+	"     For example, make CLASS=java/stack will run the experiments on the Java Stack. " ; \
+	"" ; \
+	"Clean targets:" ; \
+	"clean: clean all the experiment for the class specified in the CLASS parameter." ; \
+	"       For example, make clean CLASS=java/stack will clean the results on the Java Stack. " ; \
+	"clean_sbes: removes SBES (useful to update SBES)." ; \
+	"clean_evosuite: removes EvoSuite (useful to update EvoSuite)." ; \
 	do echo "$$line" ; done
 
 ITERATIONS:=$(shell seq 30)
@@ -49,6 +56,8 @@ $(SBESROOT):
 	cd $(TOOLS); \
 	sh downloadTools.sh downloadFromSVN "sbes" "http://star.inf.usi.ch/repos/code/andrea/sbes"
 
+.PHONY: sbes
+sbes: $(SBESJAR)
 $(SBESJAR): $(SBESROOT)
 	cd $(SBESROOT) ; \
 	$(ANT) ; \
@@ -61,6 +70,8 @@ $(EVOSUITEROOT):
 	cd $(TOOLS); \
 	sh downloadTools.sh downloadFromMercurial "evosuite" $(EVOSUITEREPO)
 
+.PHONY: evosuite
+evosuite: $(EVOSUITEJAR)
 $(EVOSUITEJAR): $(EVOSUITEROOT)
 	cd $(EVOSUITEROOT) ; \
 	$(MAVEN) package
@@ -72,6 +83,14 @@ $(EVOSUITEJAR): $(EVOSUITEROOT)
 .PHONY: clean
 clean:
 	$(foreach method,$(TARGET_METHODS),$(shell find $(CLASS)/'$(method)'/* -maxdepth 0 -type d ! -name "initial_scenario" | xargs rm -rf)) 
+
+.PHONY: clean_sbes
+clean_sbes:
+	rm -rf $(SBESROOT)
+
+.PHONY: clean_evosuite
+clean_evosuite:
+	rm -rf $(EVOSUITEROOT)
 
 
 

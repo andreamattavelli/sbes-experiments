@@ -19,7 +19,7 @@ help:
 	do echo "$$line" ; done
 
 ITERATIONS:=$(shell seq 30)
-TARGET_METHODS:=$(subst [],(),$(shell test -r $(CLASS)/target_methods.txt && cat $(CLASS)/target_methods.txt))
+TARGET_METHODS:=${subst ],),${subst [,(,$(shell test -r $(CLASS)/target_methods.txt && cat $(CLASS)/target_methods.txt)}}
 
 .PHONY: all
 all: run

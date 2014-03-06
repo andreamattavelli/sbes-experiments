@@ -1,4 +1,1 @@
-org.graphstream.graph.implementations.AbstractEdge.getNode0[]
-org.graphstream.graph.implementations.AbstractEdge.getNode1[]
-org.graphstream.graph.implementations.AbstractEdge.getSourceNode[]
-org.graphstream.graph.implementations.AbstractEdge.getTargetNode[]
+org.graphstream.graph.implementations.AbstractEdge.addAttribute[String,Object]

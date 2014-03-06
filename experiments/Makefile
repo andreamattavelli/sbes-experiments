@@ -8,13 +8,13 @@ include $(firstword $(subst /, ,$(CLASS)))/conf.mk
 help:
 	@for line in \
 	"Main targets to run the experiments:" \
-	"all: runs all the experiments on the case study specified in the CLASS parameter." ; \
-	"     For example, make CLASS=java/stack will run the experiments on the Java Stack. " ; \
-	"" ; \
-	"Clean targets:" ; \
-	"clean: clean all the experiment for the class specified in the CLASS parameter." ; \
-	"       For example, make clean CLASS=java/stack will clean the results on the Java Stack. " ; \
-	"clean_sbes: removes SBES (useful to update SBES)." ; \
+	"all: runs all the experiments on the case study specified in the CLASS parameter." \
+	"     For example, make CLASS=java/stack will run the experiments on the Java Stack. " \
+	"" \
+	"Clean targets:" \
+	"clean: clean all the experiment for the class specified in the CLASS parameter." \
+	"       For example, make clean CLASS=java/stack will clean the results on the Java Stack. " \
+	"clean_sbes: removes SBES (useful to update SBES)." \
 	"clean_evosuite: removes EvoSuite (useful to update EvoSuite)." ; \
 	do echo "$$line" ; done
 

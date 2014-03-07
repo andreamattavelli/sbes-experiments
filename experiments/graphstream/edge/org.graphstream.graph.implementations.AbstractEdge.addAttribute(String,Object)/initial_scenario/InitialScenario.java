@@ -13,11 +13,11 @@ public class AbstractEdgeEvoSuiteTest {
 
   @Test
   public void test0()  throws Throwable  {
-      AdjacencyListGraph adjacencyListGraph0 = new AdjacencyListGraph("-");
-      MultiNode multiNode0 = new MultiNode((AbstractGraph) adjacencyListGraph0, "Tz|!");
-      MultiGraph multiGraph0 = new MultiGraph("Tz|!", true, true);
-      SingleNode singleNode0 = new SingleNode(multiGraph0, "-");
-      AbstractEdge abstractEdge0 = new AbstractEdge("-", multiNode0, singleNode0, true);
-      abstractEdge0.addAttribute("value", 325);
+      MultiGraph multiGraph0 = new MultiGraph("graph", true, true);
+      SingleNode singleNode0 = new SingleNode(multiGraph0, "0");
+      SingleNode singleNode1 = new SingleNode(multiGraph0, "1");
+      AbstractEdge abstractEdge0 = new AbstractEdge("-", singleNode0, singleNode1, true);
+      Object[] ob = new Object[]{new Integer(325)};
+      abstractEdge0.addAttribute("value", ob);
   }
 }

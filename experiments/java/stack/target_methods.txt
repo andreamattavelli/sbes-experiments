@@ -1,5 +1,5 @@
 stack.util.Stack.clear[]
-stack.util.Stack.elementAt[]
+stack.util.Stack.elementAt[int]
 stack.util.Stack.firstElement[]
 stack.util.Stack.get[int]
 stack.util.Stack.indexOf[Object]

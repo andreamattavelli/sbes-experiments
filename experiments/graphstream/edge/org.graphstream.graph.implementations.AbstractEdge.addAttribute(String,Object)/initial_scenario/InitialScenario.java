@@ -17,7 +17,7 @@ public class AbstractEdgeEvoSuiteTest {
       SingleNode singleNode0 = new SingleNode(multiGraph0, "0");
       SingleNode singleNode1 = new SingleNode(multiGraph0, "1");
       AbstractEdge abstractEdge0 = new AbstractEdge("-", singleNode0, singleNode1, true);
-      Object[] ob = new Object[]{new Integer(325)};
+      Object[] ob = new Object[]{325, "a possible value", 42000};
       abstractEdge0.addAttribute("value", ob);
   }
 }

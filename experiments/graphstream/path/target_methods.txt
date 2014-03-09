@@ -1,0 +1,2 @@
+org.graphstream.graph.Path.getEdgeCount[]
+org.graphstream.graph.Path.getNodeCount[]

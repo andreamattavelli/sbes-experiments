@@ -20,6 +20,6 @@ public class AbstractEdgeEvoSuiteTest {
       AbstractEdge abstractEdge0 = new AbstractEdge("-", multiNode0, singleNode0, true);
       String attributeName = "attr0";
       abstractEdge0.addAttribute(attributeName, new Integer(452));
-      Integer attr = abstractEdge0.gettAttribute(attributeName);
+      Integer attr = abstractEdge0.getAttribute(attributeName);
   }
 }

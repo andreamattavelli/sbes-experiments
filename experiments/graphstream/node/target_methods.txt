@@ -1,4 +1,4 @@
-org.graphstream.graph.implementations.AbstractEdge.getAttribute[String]
-org.graphstream.graph.implementations.AbstractEdge.addAttribute[String,Object]
-org.graphstream.graph.implementations.AbstractEdge.changeAttribute[String,Object]
-org.graphstream.graph.implementations.AbstractEdge.setAttribute[String,Object]
+org.graphstream.graph.implementations.AbstractNode.getAttribute[String]
+org.graphstream.graph.implementations.AbstractNode.addAttribute[String,Object]
+org.graphstream.graph.implementations.AbstractNode.changeAttribute[String,Object]
+org.graphstream.graph.implementations.AbstractNode.setAttribute[String,Object]

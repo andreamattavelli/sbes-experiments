@@ -1,8 +1,8 @@
 ROOT=$(realpath ..)
 include $(ROOT)/common.mk
-include $(firstword $(subst /, ,$(CLASS)))/conf.mk
 
-CLASS=java/stack
+CLASS=default/foo
+include $(firstword $(subst /, ,$(CLASS)))/conf.mk
 
 .SILENT:
 

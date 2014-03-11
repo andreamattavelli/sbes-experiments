@@ -2,6 +2,8 @@ ROOT=$(realpath ..)
 include $(ROOT)/common.mk
 include $(firstword $(subst /, ,$(CLASS)))/conf.mk
 
+CLASS=java/stack
+
 .SILENT:
 
 .PHONY: help
@@ -52,7 +54,7 @@ $(foreach method,$(TARGET_METHODS),$(foreach iteration,$(ITERATIONS),$(eval $(ca
 #####################
 #### SBES Build.
 #####################
-$(SBESROOT):
+$(SBESROOT): $(EVOSUITEJAR)
 	cd $(TOOLS); \
 	sh downloadTools.sh downloadFromSVN "sbes" "http://star.inf.usi.ch/repos/code/andrea/sbes"
 

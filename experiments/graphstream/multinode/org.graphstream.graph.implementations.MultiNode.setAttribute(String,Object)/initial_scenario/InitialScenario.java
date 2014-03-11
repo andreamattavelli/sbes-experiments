@@ -11,7 +11,7 @@ public class MultiNodeEvoSuiteTest {
   @Test
   public void test0()  throws Throwable  {
       MultiGraph multiGraph0 = new MultiGraph("graph", true, true);
-	  Node node = multiGraph0.addNode("aNode");
+	  MultiNode node = multiGraph0.addNode("aNode");
 	  Object[] ob1 = new Object[]{325, "a possible value", 42000};
 	  node.setAttribute("value1", ob1);
   }

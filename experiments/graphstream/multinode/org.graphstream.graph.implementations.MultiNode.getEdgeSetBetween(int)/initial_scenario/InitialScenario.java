@@ -14,8 +14,9 @@ public class MultiNodeEvoSuiteTest {
       MultiGraph multiGraph0 = new MultiGraph("graph", true, true);
 	  MultiNode node0 = multiGraph0.addNode("aNode");
 	  MultiNode node1 = multiGraph0.addNode("anotherNode");
-	  multiGraph0.addEdge("edge1", node0, node1);
-	  multiGraph0.addEdge("edge2", node0, node1);
+	  MultiNode node_ = multiGraph0.getNode("aNode");
+	  multiGraph0.addEdge("edge1", node_, node1);
+	  multiGraph0.addEdge("edge2", node_, node1);
 	  Collection edges = node0.getEdgeSetBetween(node1.getIndex());
   }
 }

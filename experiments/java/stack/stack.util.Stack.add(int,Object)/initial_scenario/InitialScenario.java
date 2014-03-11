@@ -19,6 +19,7 @@ public class StackEvoSuiteTest {
       Integer integer3 = stack0.push(integer0);
       Integer integer4 = stack0.push(integer1);
       Integer integer5 = stack0.push(integer2);
-      stack0.add(0, (Integer) (-1698));
+      Integer integer6 = new Integer(-1698);
+      stack0.add(0, integer6);
   }
 }

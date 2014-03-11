@@ -16,10 +16,11 @@ public class StackEvoSuiteTest {
       Integer integer0 = new Integer(234);
       Integer integer1 = new Integer(55);
       Integer integer2 = new Integer(-2);
-      Integer integer2 = new Integer(-687);
+      Integer integer3 = new Integer(-687);
       boolean boolean0 = stack0.add(integer0);
       boolean boolean1 = stack0.add(integer1);
       boolean boolean2 = stack0.add(integer2);
-      Integer integer3 = stack0.get(2);
+      boolean boolean3 = stack0.add(integer3);
+      Integer integer4 = stack0.get(2);
   }
 }

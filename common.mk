@@ -67,7 +67,7 @@ MAVEN=/usr/bin/mvn
 SBESROOT=$(TOOLS)/sbes
 SBESJAR=$(SBESROOT)/sbes.jar
 SBESLIBS=$(SBESROOT)/lib/args4j-2.0.21.jar:$(SBESROOT)/lib/javaparser-1.0.10.jar:$(SBESROOT)/lib/asm-4.2.jar
-SYNTHESYS_BUDGET=360
+SYNTHESIS_BUDGET=360
 TEST_SEARCH_BUDGET=
 
 ##

@@ -9,7 +9,7 @@ public class Vector2EvoSuiteTest {
   @Test
   public void test0() throws Throwable  {
       Vector2 v1 = new Vector2();
-      v1.set(345, 432);
+      v1.set(345.0d, 432.0d);
       double val = v1.y();
   }
 }

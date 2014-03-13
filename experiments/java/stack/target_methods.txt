@@ -1,4 +1,6 @@
+stack.util.Stack.add[Object]
 stack.util.Stack.add[int,Object]
+stack.util.Stack.addElement[Object]
 stack.util.Stack.clear[]
 stack.util.Stack.elementAt[int]
 stack.util.Stack.firstElement[]

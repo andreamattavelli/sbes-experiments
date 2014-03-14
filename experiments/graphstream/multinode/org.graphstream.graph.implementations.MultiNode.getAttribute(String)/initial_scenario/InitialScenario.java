@@ -12,10 +12,7 @@ public class MultiNodeEvoSuiteTest {
   public void test0()  throws Throwable  {
       MultiGraph multiGraph0 = new MultiGraph("graph", true, true);
 	  MultiNode node = multiGraph0.addNode("aNode");
-	  Object[] ob1 = new Object[]{325, "a possible value", 42000};
-	  Object[] ob2 = new Object[]{245, "another possible value", 14587};
-	  node.addAttribute("value1", ob1);
-	  node.addAttribute("value2", ob2);
-	  node.getAttribute("value1");
-  }
+	  Object[] ob = new Object[]{325, "a possible value", 42000};
+	  node.addAttribute("value", ob1);
+	  Object[] attrs = node.getAttribute("value");
 }

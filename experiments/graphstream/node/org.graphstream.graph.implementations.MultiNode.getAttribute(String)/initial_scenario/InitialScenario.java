@@ -11,9 +11,9 @@ public class AbstractEdgeEvoSuiteTest {
   @Test
   public void test0()  throws Throwable  {
       MultiGraph multiGraph0 = new MultiGraph("graph", true, true);
-      AbstractNode abstractNode0 = multiGraph0.addNode("node");
+      MultiNode multiNode0 = new MultiNode(multiGraph0, "node");
       Object[] ob = new Object[]{325, "a possible value", 42000};
-      abstractNode0.addAttribute("value", ob);
-      abstractNode0.getAttribute("value");
+      multiNode0.addAttribute("value", ob);
+       Object[] attrs = abstractNode0.getAttribute("value");
   }
 }

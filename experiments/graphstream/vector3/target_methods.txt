@@ -1,4 +1,3 @@
-org.graphstream.ui.geom.Vector3.add[Vector3]
 org.graphstream.ui.geom.Vector3.x[]
 org.graphstream.ui.geom.Vector3.y[]
 org.graphstream.ui.geom.Vector3.z[]
@@ -6,4 +5,3 @@ org.graphstream.ui.geom.Vector3.set[double,double,double]
 org.graphstream.ui.geom.Vector3.dotProduct[Vector3]
 org.graphstream.ui.geom.Vector3.fill[double]
 org.graphstream.ui.geom.Vector3.copy[Vector3]
-

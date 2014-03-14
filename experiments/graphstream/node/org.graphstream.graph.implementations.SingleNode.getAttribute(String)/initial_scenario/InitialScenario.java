@@ -13,6 +13,7 @@ public class AbstractEdgeEvoSuiteTest {
       SingleGraph multiGraph0 = new SingleGraph("graph", true, true);
       SingleNode multiNode0 = new SingleNode(multiGraph0, "node");
       Object[] ob = new Object[]{325, "a possible value", 42000};
+      multiNode0.addAttribute("value", ob);
       Object[] attrs = multiNode0.getAttribute("value");
   }
 }

@@ -19,6 +19,7 @@ public class StackEvoSuiteTest {
       boolean boolean0 = stack0.add(integer0);
       boolean boolean1 = stack0.add(integer1);
       boolean boolean2 = stack0.add(integer2);
-      Integer integer4 = stack0.push((Integer) 257);
+      Integer integer3 = new Integer(-1698);
+      Integer integer4 = stack0.push(integer3);
   }
 }

@@ -9,6 +9,9 @@ public class Vector3EvoSuiteTest {
   @Test
   public void test0() throws Throwable  {
       Vector3 v1 = new Vector3();
-      v1.set(345.0d, 432.0d, 123.0d);
+      double a = 320.0d;
+      double b = 530.0d;
+      double c = 123.0d;
+      v1.set(a, b, c);
   }
 }

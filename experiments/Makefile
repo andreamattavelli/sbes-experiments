@@ -51,6 +51,13 @@ endef
 ##
 $(foreach method,$(TARGET_METHODS),$(foreach iteration,$(ITERATIONS),$(eval $(call run_iteration,$(method),$(iteration)))))
 
+## This target runs all the script to collect the data for the paper
+##
+.PHONY: data
+data:
+	$(shell $(TOOLS)/script/print_time.sh)
+	$(shell $(TOOLS)/script/print_es.sh)
+
 #####################
 #### SBES Build.
 #####################

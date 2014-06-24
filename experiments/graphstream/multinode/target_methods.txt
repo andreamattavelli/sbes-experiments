@@ -1,0 +1,4 @@
+org.graphstream.graph.implementations.MultiNode.getAttribute[String]
+org.graphstream.graph.implementations.MultiNode.addAttribute[String,Object]
+org.graphstream.graph.implementations.MultiNode.changeAttribute[String,Object]
+org.graphstream.graph.implementations.MultiNode.setAttribute[String,Object]

@@ -18,8 +18,8 @@ help:
 	"clean: clean all the experiment for the class specified in the CLASS parameter." \
 	"       For example, make clean CLASS=java/stack will clean the results on the Java Stack."; \
 	do echo "$$line" ; done
-
-ITERATIONS:=$(shell seq 30)
+ITER=30
+ITERATIONS:=$(shell seq $(ITER))
 TARGET_METHODS:=${subst ],),${subst [,(,$(shell test -r $(CLASS)/target_methods.txt && cat $(CLASS)/target_methods.txt)}}
 
 .PHONY: all

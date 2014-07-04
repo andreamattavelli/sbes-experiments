@@ -6,7 +6,6 @@ java=`find java -maxdepth 4 -mindepth 4 -type f \( \( ! -ipath '*svn*' \) -a \( 
 rm -rf graphstream_es.txt
 rm -rf java_es.txt
 
-echo "Processing GraphStream.."
 for gs in $graphstream; do
 	echo "========== $gs" >> graphstream_es.txt
 
@@ -27,7 +26,6 @@ for gs in $graphstream; do
 	fi
 done
 
-echo "Processing java.Stack.."
 for jv in $java; do
 	echo "========== $jv" >> java_es.txt
 
@@ -47,5 +45,3 @@ for jv in $java; do
 		echo ""  >> java_es.txt
 	fi
 done
-
-echo "Done!"

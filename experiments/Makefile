@@ -12,6 +12,7 @@ help:
 	"Main targets to run the experiments:" \
 	"all: runs all the experiments on the case study specified in the CLASS parameter." \
 	"     For example, make CLASS=java/stack will run the experiments on the Java Stack. " \
+	"experiments: runs the experimental evaluation on the set of classes specified in file 'target.txt'. " \
 	"" \
 	"Clean targets:" \
 	"clean: clean all the experiment for the class specified in the CLASS parameter." \
@@ -20,7 +21,8 @@ help:
 	"clean_evosuite: removes EvoSuite (useful to update EvoSuite)." ; \
 	do echo "$$line" ; done
 
-ITERATIONS:=$(shell seq 30)
+ITER=30
+ITERATIONS:=$(shell seq $(ITER))
 TARGET_METHODS:=${subst ],),${subst [,(,$(shell test -r $(CLASS)/target_methods.txt && cat $(CLASS)/target_methods.txt)}}
 
 .PHONY: all
@@ -42,14 +44,23 @@ $(CLASS)/$(1)/$(2)/log: $(SBESJAR) $(EVOSUITEJAR) $(LIBS)/$(JARNAME) $(CLASS)/$(
 	@echo "Running SBES on class $$(CLASS), method $(1), iteration $(2)"
 	-test -d '$$(CLASS)/$(1)/$(2)' || mkdir -p '$$(CLASS)/$(1)/$(2)'
 	-cd '$$(CLASS)/$(1)/$(2)' ; \
-	$$(JAVA) -cp $$(SBESJAR):$$(SBESLIBS) sbes.SBES -synthesis_budget=$$(SYNTHESIS_BUDGET) -counterexample_budget=$$(COUNTEREXAMPLE_BUDGET) -classes=$$(LIBS)/$$(JARNAME) -method='$(1)' \
-		 -test_scenario='../initial_scenario/InitialScenario.java' \
-		 -junit=$$(JUNIT) -evosuite=$$(EVOSUITEJAR) -java=$$(JAVABINDIR) > log 2>&1
+	$$(JAVA) -cp $$(SBESJAR):$$(SBESLIBS) sbes.SBES \
+		-synthesis_budget=$$(SYNTHESIS_BUDGET) -counterexample_budget=$$(COUNTEREXAMPLE_BUDGET) \
+		-classes=$$(LIBS)/$$(JARNAME) -method='$(1)' \
+		-test_scenario='../initial_scenario/InitialScenario.java' \
+		-stopping_condition=MAXITERATIONSWITHNOSYNTHESIS -stopping_condition_value=3 \
+		-junit=$$(JUNIT) -evosuite=$$(EVOSUITEJAR) -java=$$(JAVABINDIR) > log 2>&1
 endef
 
-## This is the "expasion" for the macro defined above.
+## This is the "expansion" for the macro defined above.
 ##
 $(foreach method,$(TARGET_METHODS),$(foreach iteration,$(ITERATIONS),$(eval $(call run_iteration,$(method),$(iteration)))))
+
+.PHONY: experiments
+experiments: 
+	while read TARGET; do \
+		$(MAKE) CLASS=$$TARGET; \
+	done < targets.txt
 
 ## This target runs all the script to collect the data for the paper
 ##
@@ -63,7 +74,7 @@ data:
 #####################
 $(SBESROOT): $(EVOSUITEJAR)
 	cd $(TOOLS); \
-	sh downloadTools.sh downloadFromSVN "sbes" "http://star.inf.usi.ch/repos/code/andrea/sbes"
+	sh downloadTools.sh downloadFromSVN "sbes" "http://star.inf.usi.ch/repos/code/SBES/trunk/sbes/"
 
 .PHONY: sbes
 sbes: $(SBESJAR)
@@ -92,6 +103,12 @@ $(EVOSUITEJAR): $(EVOSUITEROOT)
 .PHONY: clean
 clean:
 	$(foreach method,$(TARGET_METHODS),$(shell find $(CLASS)/'$(method)'/* -maxdepth 0 -type d ! -name "initial_scenario" | xargs rm -rf)) 
+
+.PHONY: veryclean
+veryclean:
+	while read TARGET; do \
+		$(MAKE) clean CLASS=$$TARGET; \
+	done < targets.txt
 
 .PHONY: clean_sbes
 clean_sbes:

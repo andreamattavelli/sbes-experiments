@@ -1,0 +1,8 @@
+java/stack
+graphstream/edge
+graphstream/multinode
+graphstream/singlenode
+graphstream/node
+graphstream/path
+graphstream/vector2
+graphstream/vector3

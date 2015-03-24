@@ -14,13 +14,11 @@ public class StackEvoSuiteTest {
   public void test0()  throws Throwable  {
     ArrayListMultimap<Integer, String> arrayListMultimap0 = ArrayListMultimap.create();
     Integer integer0 = new Integer(234);
-    Integer integer1 = new Integer(55);
-    Integer integer2 = new Integer(2);
-    String string0 = "pippo";
-    boolean boolean0 = arrayListMultimap0.put(integer0, string0);
-    boolean boolean1 = arrayListMultimap0.put(integer1, string0);
-    boolean boolean2 = arrayListMultimap0.put(integer2, string0);
+    List<String> list0 = new ArrayList();
+    list0.add("pippo");
+    boolean boolean0 = arrayListMultimap0.putAll(integer0, list0);
     Integer integer3 = new Integer(-1698);
+    String string0 = "pluto";
     boolean boolean3 = arrayListMultimap0.put(integer3, string0);
   }
 }

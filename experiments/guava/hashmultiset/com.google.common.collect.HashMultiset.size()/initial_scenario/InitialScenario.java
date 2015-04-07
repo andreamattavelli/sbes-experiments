@@ -18,11 +18,13 @@ public class StackEvoSuiteTest {
 
   @Test
   public void test0()  throws Throwable  {
-    	HashMultimap<Integer, String> linkedListMultimap0 = HashMultimap.create();
-		boolean boolean1 = linkedListMultimap0.put(-1698, "pluto");
-		boolean boolean2 = linkedListMultimap0.put(123, "asd");
-		boolean boolean3 = linkedListMultimap0.put(18, "ginger");
-		boolean boolean4 = linkedListMultimap0.put(18, "ginger2");
-		linkedListMultimap0.clear();
+    	HashMultiset<Integer> hashMultiset0 = HashMultiset.create();
+		Integer integer0 = new Integer(-18247);
+		Integer integer1 = new Integer(34);
+		Integer integer2 = new Integer(0);
+		boolean boolean0 = hashMultiset0.add(integer0);
+		boolean boolean1 = hashMultiset0.add(integer1);
+		boolean boolean2 = hashMultiset0.add(integer2);
+		int int0 = hashMultiset0.size();
   }
 }

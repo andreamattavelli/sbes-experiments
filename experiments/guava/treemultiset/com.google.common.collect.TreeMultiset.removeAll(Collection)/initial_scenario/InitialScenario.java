@@ -26,7 +26,7 @@ public class StackEvoSuiteTest {
 		boolean boolean1 = treeMultiset0.add(integer1);
 		boolean boolean2 = treeMultiset0.add(integer2);
 		List<Integer> arrayList0 = new ArrayList();
-		arrayList0.add(34);
+		arrayList0.add(0);
 		boolean boolean3 = treeMultiset0.removeAll(arrayList0);
   }
 }

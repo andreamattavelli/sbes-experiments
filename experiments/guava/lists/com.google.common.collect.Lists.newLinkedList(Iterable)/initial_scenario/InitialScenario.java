@@ -7,7 +7,7 @@ package com.google.common.collect;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.Test;
@@ -18,8 +18,12 @@ public class StackEvoSuiteTest {
 
   @Test
   public void test0()  throws Throwable  {
-    	HashMultiset<Integer> hashMultiset0 = HashMultiset.create();
-		Integer integer0 = new Integer(-18247);
-		int int0 = hashMultiset0.add(integer0, 3);
+    	List<Integer> ll = new ArrayList<Integer>();
+		ll.add(1);
+		ll.add(2);
+		ll.add(3);
+		ll.add(4);
+		ll.add(5);
+		LinkedList<Integer> list = Lists.newLinkedList(ll);
   }
 }

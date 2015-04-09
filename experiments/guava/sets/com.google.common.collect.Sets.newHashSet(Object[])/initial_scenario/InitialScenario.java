@@ -7,8 +7,11 @@ package com.google.common.collect;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.TreeSet;
 
 import org.junit.Test;
 
@@ -18,8 +21,7 @@ public class StackEvoSuiteTest {
 
   @Test
   public void test0()  throws Throwable  {
-    	HashMultiset<Integer> hashMultiset0 = HashMultiset.create();
-		Integer integer0 = new Integer(-18247);
-		int int0 = hashMultiset0.add(integer0, 3);
+    	Integer array[] = new Integer[] {1,2,3,4,5,6,7,8,9};
+		HashSet<Integer> set = Sets.newHashSet(array);
   }
 }

@@ -6,10 +6,12 @@ package com.google.common.collect;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
+import java.util.HashMap;
+import java.util.IdentityHashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.concurrent.ConcurrentMap;
 import org.junit.Test;
 
 import com.google.common.collect.ArrayListMultimap;
@@ -18,8 +20,9 @@ public class StackEvoSuiteTest {
 
   @Test
   public void test0()  throws Throwable  {
-    	HashMultiset<Integer> hashMultiset0 = HashMultiset.create();
-		Integer integer0 = new Integer(-18247);
-		int int0 = hashMultiset0.add(integer0, 3);
+    	Map<Integer, String> other = new LinkedHashMap<Integer, String>();
+		other.put(0, "asd");
+		other.put(13123, "asssssssdddasd");
+		LinkedHashMap<Integer, String> map = Maps.newLinkedHashMap(other);
   }
 }

@@ -6,9 +6,12 @@ package com.google.common.collect;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.HashMap;
+import java.util.IdentityHashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.concurrent.ConcurrentMap;
 
 import org.junit.Test;
 
@@ -18,8 +21,6 @@ public class StackEvoSuiteTest {
 
   @Test
   public void test0()  throws Throwable  {
-    	HashMultiset<Integer> hashMultiset0 = HashMultiset.create();
-		Integer integer0 = new Integer(-18247);
-		int int0 = hashMultiset0.add(integer0, 3);
+    	IdentityHashMap<Integer, String> map = Maps.newIdentityHashMap();
   }
 }

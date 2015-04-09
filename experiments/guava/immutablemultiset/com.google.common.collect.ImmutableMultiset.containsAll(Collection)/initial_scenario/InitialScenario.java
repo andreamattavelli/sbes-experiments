@@ -18,8 +18,12 @@ public class StackEvoSuiteTest {
 
   @Test
   public void test0()  throws Throwable  {
-    	HashMultiset<Integer> hashMultiset0 = HashMultiset.create();
-		Integer integer0 = new Integer(-18247);
-		int int0 = hashMultiset0.add(integer0, 3);
+    	Integer integer0 = 1;
+		Integer integer1 = -141097;
+		List<Integer> list = new ArrayList<Integer>();
+		list.add(integer0);
+		list.add(integer1);
+		ImmutableMultiset<Integer> map = ImmutableMultiset.of(integer0, integer1);
+		boolean boolean0 = map.containsAll(list);
   }
 }

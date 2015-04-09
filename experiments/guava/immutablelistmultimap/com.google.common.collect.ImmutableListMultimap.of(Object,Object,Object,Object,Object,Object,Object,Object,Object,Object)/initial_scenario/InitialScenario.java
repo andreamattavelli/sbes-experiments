@@ -18,8 +18,16 @@ public class StackEvoSuiteTest {
 
   @Test
   public void test0()  throws Throwable  {
-    	HashMultiset<Integer> hashMultiset0 = HashMultiset.create();
-		Integer integer0 = new Integer(-18247);
-		int int0 = hashMultiset0.add(integer0, 3);
+    	Integer integer0 = 1;
+		Integer integer1 = -141097;
+		Integer integer2 = 867;
+		Integer integer3 = -562;
+		Integer integer4 = 11;
+		String string0 = "asd";
+		String string1 = "asfih91hrda1h,iz";
+		String string2 = "sa78tmn[";
+		String string3 = "ggihg";
+		String string4 = "231";
+		ImmutableListMultimap<Integer, String> map = ImmutableListMultimap.of(integer0, string0, integer1, string1, integer2, string2, integer3, string3, integer4, string4);
   }
 }

@@ -1,7 +1,6 @@
 com.google.common.collect.ImmutableMultiset.contains[Object]
 com.google.common.collect.ImmutableMultiset.containsAll[Collection]
 com.google.common.collect.ImmutableMultiset.of[]
-com.google.common.collect.ImmutableMultiset.of[Object,Object,Object,Object,Object,Object,Object[]]
 com.google.common.collect.ImmutableMultiset.of[Object,Object,Object,Object,Object]
 com.google.common.collect.ImmutableMultiset.of[Object,Object,Object,Object]
 com.google.common.collect.ImmutableMultiset.of[Object,Object,Object]

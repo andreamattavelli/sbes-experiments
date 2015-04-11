@@ -17,7 +17,10 @@ public class StackEvoSuiteTest {
 
   @Test
   public void test0()  throws Throwable  {
+  		Integer i = 0;
+  		String s = "0";
+  		Character c = 'a';
     	TreeBasedTable<Integer, String, Character> hashBasedTable0 = TreeBasedTable.create();
-		hashBasedTable0.put(0, "0", 'a');
+		hashBasedTable0.put(i, s, c);
   }
 }

@@ -23,6 +23,7 @@ public class StackEvoSuiteTest {
 		hashBasedTable0.put(0, "1", 'c');
 		hashBasedTable0.put(2, "2", 'd');
 		hashBasedTable0.put(2, "1", 'e');
-		Map<String, Character> map = hashBasedTable0.row(2);
+		Integer integer0 = 2;
+		Map<String, Character> map = hashBasedTable0.row(integer0);
   }
 }

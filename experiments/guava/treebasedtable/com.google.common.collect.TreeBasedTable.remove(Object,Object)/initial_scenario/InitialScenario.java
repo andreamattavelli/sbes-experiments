@@ -23,6 +23,8 @@ public class StackEvoSuiteTest {
 		hashBasedTable0.put(0, "1", 'c');
 		hashBasedTable0.put(2, "2", 'd');
 		hashBasedTable0.put(2, "1", 'e');
-		Character c = hashBasedTable0.remove(0, "1");
+		Integer integer0 = 0;
+		String string0 = "1";
+		Character c = hashBasedTable0.remove(integer0, string0);
   }
 }

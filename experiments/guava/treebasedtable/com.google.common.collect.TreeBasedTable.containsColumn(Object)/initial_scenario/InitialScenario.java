@@ -23,6 +23,7 @@ public class StackEvoSuiteTest {
 		hashBasedTable0.put(0, "1", 'c');
 		hashBasedTable0.put(2, "2", 'd');
 		hashBasedTable0.put(2, "1", 'e');
-		boolean boolean1 = hashBasedTable0.containsColumn("0");
+		String string0 = "0";
+		boolean boolean1 = hashBasedTable0.containsColumn(string0);
   }
 }

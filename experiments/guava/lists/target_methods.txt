@@ -1,7 +1,7 @@
 com.google.common.collect.Lists.newArrayList[]
 com.google.common.collect.Lists.newArrayList[Iterable]
 com.google.common.collect.Lists.newArrayList[Iterator]
-com.google.common.collect.Lists.newArrayList[Object[]]
+com.google.common.collect.Lists.newArrayList[Object]
 com.google.common.collect.Lists.newArrayListWithCapacity[int]
 com.google.common.collect.Lists.newArrayListWithExpectedSize[int]
 com.google.common.collect.Lists.newLinkedList[]

@@ -18,6 +18,9 @@ public class StackEvoSuiteTest {
   @Test
   public void test0()  throws Throwable  {
     	HashBasedTable<Integer, String, Character> hashBasedTable0 = HashBasedTable.create();
-		hashBasedTable0.put(0, "0", 'a');
+    	Integer integer0 = 0;
+    	String string0 = "0";
+    	Character character0 = 'a';
+		hashBasedTable0.put(integer0, string0, character0);
   }
 }

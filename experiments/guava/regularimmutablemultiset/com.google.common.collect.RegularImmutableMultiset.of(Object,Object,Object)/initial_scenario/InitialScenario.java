@@ -21,6 +21,6 @@ public class StackEvoSuiteTest {
     	Integer integer0 = 1;
 		Integer integer1 = -141097;
 		Integer integer2 = 867;
-		ImmutableMultiset<Integer> map = ImmutableMultiset.of(integer0, integer1, integer2);
+		RegularImmutableMultiset<Integer> map = RegularImmutableMultiset.of(integer0, integer1, integer2);
   }
 }

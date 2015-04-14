@@ -18,6 +18,6 @@ public class StackEvoSuiteTest {
 
   @Test
   public void test0()  throws Throwable  {
-    	ImmutableMultiset<Integer> map = ImmutableMultiset.of();
+    	RegularImmutableMultiset<Integer> map = RegularImmutableMultiset.of();
   }
 }

@@ -23,6 +23,6 @@ public class StackEvoSuiteTest {
 		Integer integer2 = 867;
 		Integer integer3 = -562;
 		Integer integer4 = 11;
-		ImmutableMultiset<Integer> map = ImmutableMultiset.of(integer0, integer1, integer2, integer3, integer4);
+		RegularImmutableMultiset<Integer> map = RegularImmutableMultiset.of(integer0, integer1, integer2, integer3, integer4);
   }
 }

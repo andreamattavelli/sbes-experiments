@@ -20,6 +20,6 @@ public class StackEvoSuiteTest {
   public void test0()  throws Throwable  {
     	Integer integer0 = 1;
 		Integer integer1 = -141097;
-		ImmutableMultiset<Integer> map = ImmutableMultiset.of(integer0, integer1);
+		RegularImmutableMultiset<Integer> map = RegularImmutableMultiset.of(integer0, integer1);
   }
 }

@@ -80,5 +80,5 @@ JUNIT=$(TOOLS)/junit.jar
 ## EVOSUITE
 ##
 EVOSUITEROOT=$(TOOLS)/evosuite
-EVOSUITEJAR=$(EVOSUITEROOT)/target/evosuite-sbes-0.1-SNAPSHOT-jar-minimal.jar
-EVOSUITEREPO=https://alberto_goffi@bitbucket.org/gorla/evosuite-sbes
+EVOSUITEJAR=$(EVOSUITEROOT)/target/evosuite-0.1-SNAPSHOT-jar-minimal.jar
+EVOSUITEREPO=https://andreamattavelli@bitbucket.org/andreamattavelli/evosuite-sbes

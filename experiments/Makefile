@@ -1,7 +1,7 @@
 ROOT=$(realpath ..)
 include $(ROOT)/common.mk
 
-PROJECT=default
+PROJECT=guava
 include $(PROJECT)/conf.mk
 
 .SILENT:
@@ -23,8 +23,6 @@ ITER=1
 ITERATIONS:=$(shell seq $(ITER))
 # TARGETS contains all target classes in targets.txt which belong to the given PROJECT
 TARGETS=$(shell test -r targets.txt && cat targets.txt | grep $(PROJECT))
-# PROJECTS contains all projects in target.txt
-PROJECTS:=$(shell test -r targets.txt && sed 's/\/.*//g' targets.txt | uniq)
 
 .PHONY: all
 all: experiments
@@ -55,9 +53,11 @@ $(foreach class,$(TARGETS),$(foreach method,$(class_methods),$(foreach iteration
 ## Runs all the classes in targets.txt
 ##
 .PHONY: experiments
+# PROJECTS contains all projects in target.txt
+PROJECTS:=$(shell test -r targets.txt && sed 's/\/.*//g' targets.txt | uniq)
 experiments:
 	for PROJECT in $(PROJECTS); do \
-		$(MAKE) PROJECT=$$PROJECT; \
+		$(MAKE) run PROJECT=$$PROJECT; \
 	done
 
 ## This target runs all the script to collect the data for the paper

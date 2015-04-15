@@ -2,9 +2,11 @@
 
 graphstream=`find graphstream -maxdepth 4 -mindepth 4 -type f \( \( ! -ipath '*svn*' \) -a \( -iname "log" \) \)`
 java=`find java -maxdepth 4 -mindepth 4 -type f \( \( ! -ipath '*svn*' \) -a \( -iname "log" \) \)`
+guava=`find guava -maxdepth 4 -mindepth 4 -type f \( \( ! -ipath '*svn*' \) -a \( -iname "log" \) \)`
 
 rm -rf graphstream_es.txt
 rm -rf java_es.txt
+rm -rf guava_es.txt
 
 echo "Processing GraphStream.."
 for gs in $graphstream; do
@@ -47,5 +49,27 @@ for jv in $java; do
 		echo ""  >> java_es.txt
 	fi
 done
+
+echo "Processing Google Guava.."
+for gv in $guava; do
+	echo "========== $gv" >> guava_es.txt
+
+	# get length of the log file
+	length=`wc -l < $gv`
+	# get initial position of equivalent sequences print
+	position=`grep -n "Equivalent sequences synthesized" $gv | cut -d ':' -f1`
+
+	if [ -z "$position" ]; then
+		echo "No equivalent sequence found"  >> guava_es.txt
+	else 
+		tail_index=`expr $length - $position`
+		head_index=`expr $tail_index - 2`
+
+		tail -n$tail_index $gv | head -n$head_index  >> guava_es.txt
+
+		echo ""  >> guava_es.txt
+	fi
+done
+
 
 echo "Done!"

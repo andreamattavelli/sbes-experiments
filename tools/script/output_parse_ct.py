@@ -1,14 +1,18 @@
 import csv
 import sys
+import os
 
 for output in sys.argv[1:]:
+    if not os.path.exist(output):
+        continue
+
     reader = csv.reader(open(output, "rb"))
     sysnthesisCols = []
     rows = list(reader)
 
     i = 0
     for col in rows[0]:
-        if col.startswith("COUNTEREXAMPLE"): #if col.startswith("SYNTHESIS"):          
+        if col.startswith("COUNTEREXAMPLE"):
             sysnthesisCols.append(i)
         i = i + 1
     max = 0

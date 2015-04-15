@@ -1,7 +1,11 @@
 import csv
 import sys
+import os
 
 for output in sys.argv[1:]:
+    if not os.path.exist(output):
+        continue
+    
     reader = csv.reader(open(output, "rb"))
     sysnthesisCols = []
     rows = list(reader)
@@ -11,7 +15,6 @@ for output in sys.argv[1:]:
         if col.startswith("SYNTHESIS"):          
             sysnthesisCols.append(i)
         i = i + 1
-#    print(sysnthesisCols)
     max = 0
     for synt in sysnthesisCols:
         syntTime = int(rows[1][synt])

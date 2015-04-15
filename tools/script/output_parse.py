@@ -1,9 +1,9 @@
 import csv
 import sys
-import os
+import os.path
 
 for output in sys.argv[1:]:
-    if not os.path.exist(output):
+    if not os.path.exists(output):
         continue
     
     reader = csv.reader(open(output, "rb"))

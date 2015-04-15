@@ -1,8 +1,8 @@
 #!/bin/bash
 
-graphstream=`find graphstream -maxdepth 4 -mindepth 4 -type f \( \( ! -ipath '*svn*' \) -a \( -iname "log" \) \)`
-java=`find java -maxdepth 4 -mindepth 4 -type f \( \( ! -ipath '*svn*' \) -a \( -iname "log" \) \)`
-guava=`find guava -maxdepth 4 -mindepth 4 -type f \( \( ! -ipath '*svn*' \) -a \( -iname "log" \) \)`
+graphstream=`find graphstream -maxdepth 4 -mindepth 4 -type f \( \( ! -ipath '*svn*' \) -a \( -iname "log" \) \) | sort`
+java=`find java -maxdepth 4 -mindepth 4 -type f \( \( ! -ipath '*svn*' \) -a \( -iname "log" \) \) | sort`
+guava=`find guava -maxdepth 4 -mindepth 4 -type f \( \( ! -ipath '*svn*' \) -a \( -iname "log" \) \) | sort`
 
 rm -rf graphstream_es.txt
 rm -rf java_es.txt
@@ -21,7 +21,7 @@ for gs in $graphstream; do
 		echo "No equivalent sequence found" >> graphstream_es.txt
 	else
 		tail_index=`expr $length - $position`
-		head_index=`expr $tail_index - 2`
+		head_index=`expr $tail_index - 4`
 
 		tail -n$tail_index $gs | head -n$head_index >> graphstream_es.txt
 
@@ -42,7 +42,7 @@ for jv in $java; do
 		echo "No equivalent sequence found"  >> java_es.txt
 	else 
 		tail_index=`expr $length - $position`
-		head_index=`expr $tail_index - 2`
+		head_index=`expr $tail_index - 4`
 
 		tail -n$tail_index $jv | head -n$head_index  >> java_es.txt
 
@@ -63,7 +63,7 @@ for gv in $guava; do
 		echo "No equivalent sequence found"  >> guava_es.txt
 	else 
 		tail_index=`expr $length - $position`
-		head_index=`expr $tail_index - 2`
+		head_index=`expr $tail_index - 4`
 
 		tail -n$tail_index $gv | head -n$head_index  >> guava_es.txt
 

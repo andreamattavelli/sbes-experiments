@@ -50,6 +50,13 @@ endef
 ## This is the "expansion" for the macro defined above.
 $(foreach class,$(TARGETS),$(foreach method,$(class_methods),$(foreach iteration,$(ITERATIONS),$(eval $(call run_iteration,$(class),$(method),$(iteration))))))
 
+PROJECTS:=$(shell test -r targets.txt && sed 's/\/.*//g' targets.txt | uniq)
+.PHONY: experiments
+experiments:
+	for PROJECT in $(PROJECTS); do \
+		$(MAKE) PROJECT=$$PROJECT; \
+	done
+
 ## This target runs all the script to collect the data for the paper
 ##
 .PHONY: data

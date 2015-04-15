@@ -1,7 +1,7 @@
 ROOT=$(realpath ..)
 include $(ROOT)/common.mk
 
-PROJECT=guava
+PROJECT=default
 ## TODO ALE: quickly fixed to make it work with guava. Fix it properly.
 include $(PROJECT)/conf.mk
 # include $(firstword $(subst /, ,$(CLASS)))/conf.mk
@@ -23,7 +23,7 @@ help:
 ITER=1
 ITERATIONS:=$(shell seq $(ITER))
 # TARGETS contains all target classes
-TARGETS:=$(shell test -r targets.txt && cat targets.txt)
+TARGETS=$(shell test -r targets.txt && cat targets.txt | grep $(PROJECT))
 
 .PHONY: all
 all: run
@@ -97,6 +97,10 @@ $(EVOSUITEJAR): $(EVOSUITEROOT)
 #####################
 .PHONY: clean
 clean:
+	echo ""
+
+.PHONY: veryclean
+veryclean:
 	$(foreach class,$(TARGETS),$(foreach method,$(class_methods),$(shell find $(class)/'$(method)'/* -maxdepth 0 -type d ! -name "initial_scenario" | xargs rm -rf)))
 
 .PHONY: clean_sbes

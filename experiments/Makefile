@@ -64,8 +64,8 @@ experiments:
 ##
 .PHONY: data
 data:
-	$(shell $(TOOLS)/script/print_time.sh)
-	$(shell $(TOOLS)/script/print_es.sh)
+	bash $(TOOLS)/script/print_time.sh
+	bash $(TOOLS)/script/print_es.sh
 
 #####################
 #### SBES Build.
@@ -113,6 +113,3 @@ clean_sbes:
 .PHONY: clean_evosuite
 clean_evosuite:
 	rm -rf $(EVOSUITEROOT)
-
-
-

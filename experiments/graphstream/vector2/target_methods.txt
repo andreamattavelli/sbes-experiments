@@ -1,6 +1,0 @@
-org.graphstream.ui.geom.Vector2.x[]
-org.graphstream.ui.geom.Vector2.y[]
-org.graphstream.ui.geom.Vector2.set[double,double]
-org.graphstream.ui.geom.Vector2.dotProduct[Vector2]
-org.graphstream.ui.geom.Vector2.fill[double]
-org.graphstream.ui.geom.Vector2.copy[Vector2]

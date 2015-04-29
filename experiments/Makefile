@@ -66,35 +66,7 @@ experiments:
 data:
 	bash $(TOOLS)/script/print_time.sh
 	bash $(TOOLS)/script/print_es.sh
-
-#####################
-#### SBES Build.
-#####################
-$(SBESROOT): $(EVOSUITEJAR)
-	cd $(TOOLS); \
-	sh downloadTools.sh downloadFromSVN "sbes" "http://star.inf.usi.ch/repos/code/SBES/trunk/sbes/"
-
-.PHONY: sbes
-sbes: $(SBESJAR)
-$(SBESJAR): $(SBESROOT)
-	cd $(SBESROOT) ; \
-	$(ANT) ; \
-	$(JAR) cf sbes.jar -C bin .
-
-#####################
-#### EvoSuite Build.
-#####################
-$(EVOSUITEROOT):
-	cd $(TOOLS); \
-	sh downloadTools.sh downloadFromMercurial "evosuite" $(EVOSUITEREPO)
-
-.PHONY: evosuite
-evosuite: $(EVOSUITEJAR)
-$(EVOSUITEJAR): $(EVOSUITEROOT)
-	cd $(EVOSUITEROOT) ; \
-	$(MAVEN) package
-
-
+	
 #####################
 #### Clean targets.
 #####################

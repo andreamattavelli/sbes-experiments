@@ -27,28 +27,29 @@ UNAME=$(shell uname)
 SHELL:=/bin/bash
 
 ##
-## JAVA
+## JAVA8
 ##
 # Linux (research / allegro)
-JAVAROOT=/tools/jdk1.7.0_05
+JAVA8ROOT=/tools/jdk1.8.0_20
 # Mac (with java 1.6)
-#JAVAROOT=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents
-#JAVAROOT=/System/Library/Frameworks/JavaVM.framework/Versions/Current
+#JAVA8ROOT=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents
+#JAVA8ROOT=/System/Library/Frameworks/JavaVM.framework/Versions/Current
 
 # set java paths depending on the operating system
-ifeq ($(UNAME),Darwin)
-JAVABINDIR=$(JAVAROOT)/Commands
-JAVALIBDIR=$(JAVAROOT)/Resources
-export JAVA_HOME=$(/usr/libexec/java_home)
-else
-JAVABINDIR=$(JAVAROOT)/bin
-JAVALIBDIR=$(JAVAROOT)/jre/lib
-export JAVA_HOME=$(JAVAROOT)
-endif
+JAVA8BINDIR=$(JAVA8ROOT)/bin
+JAVA8LIBDIR=$(JAVA8ROOT)/jre/lib
+export JAVA_HOME=$(JAVA8ROOT)
+JAVA8=$(JAVA8BINDIR)/java
+JAVAC8=$(JAVA8BINDIR)/javac
+JAR8=$(JAVA8BINDIR)/jar
 
-JAVA=$(JAVABINDIR)/java
-JAVAC=$(JAVABINDIR)/javac
-JAR=$(JAVABINDIR)/jar
+##
+## JAVA7 (for EvoSuite)
+##
+JAVA7ROOT=/tools/jdk1.7.0_05
+JAVA7BINDIR=$(JAVA7ROOT)/bin
+JAVA7LIBDIR=$(JAVA7ROOT)/jre/lib
+JAR7=$(JAVA7BINDIR)/jar
 
 ## 
 ## ANT
@@ -66,9 +67,12 @@ MAVEN=/usr/bin/mvn
 ##
 SBESROOT=$(TOOLS)/sbes
 SBESJAR=$(SBESROOT)/sbes.jar
-SBESLIBS=$(SBESROOT)/lib/args4j-2.0.21.jar:$(SBESROOT)/lib/javaparser-1.0.10.jar:$(SBESROOT)/lib/asm-4.2.jar
+SBESLIBROOT=$(TOOLS)/sbes-lib
+SBESLIBJAR=$(SBESLIBROOT)/sbes-lib.jar
+SBESLIBS=$(SBESROOT)/lib/args4j-2.32.jar:$(SBESROOT)/lib/asm-5.0.4.jar:$(SBESROOT)/lib/hamcrest.jar:$(SBESROOT)/lib/javaparser-1.0.10.jar:$(SBESROOT)/lib/jbse-0.7.jar:$(SBESROOT)/lib/junit.jar:$(SBESROOT)/lib/javassist.jar:$(SBESROOT)/lib/prologbeans.jar:$(SBESROOT)/lib/minijdd_103.jar
 SYNTHESIS_BUDGET=270
 COUNTEREXAMPLE_BUDGET=180
+JBSE=$(TOOLS)/jbse/bin
 
 ##
 ## JUNIT

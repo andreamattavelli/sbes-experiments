@@ -1,7 +1,7 @@
 ROOT=$(realpath ..)
 include $(ROOT)/common.mk
 
-PROJECT=guava
+PROJECT=java
 include $(PROJECT)/conf.mk
 
 .SILENT:
@@ -33,15 +33,19 @@ class_methods = ${subst ],),${subst [,(,$(shell test -r $(class)/target_methods.
 run: $(foreach class,$(TARGETS),$(foreach method,$(class_methods),$(foreach iteration,$(ITERATIONS),$(class)/$(method)/$(iteration)/log)))
 
 define run_iteration
- $(1)/$(2)/$(3)/log: $(SBESJAR) $(EVOSUITEJAR) $(LIBS)/$(JARNAME) $(1)/$(2)/initial_scenario/InitialScenario.java
+ $(1)/$(2)/$(3)/log: $(SBESJAR) $(SBESLIBJAR) $(EVOSUITEJAR) $(LIBS)/$(JARNAME) $(1)/$(2)/initial_scenario/InitialScenario.java
 	@echo "Running SBES on class $(1), method $(2), iteration $(3)"
 	-test -d '$(1)/$(2)/$(3)' || mkdir -p '$(1)/$(2)/$(3)'
 	-cd '$(1)/$(2)/$(3)' ; \
-	$$(JAVA) -cp $$(SBESJAR):$$(SBESLIBS) sbes.SBES \
+	$$(JAVA8) -cp $$(SBESJAR):$$(SBESLIBS) sbes.SBES \
 		-classes=$$(LIBS)/$$(JARNAME) \
-		-junit=$$(JUNIT) -evosuite=$$(EVOSUITEJAR) -java=$$(JAVABINDIR) \
+		-sbes_lib=$$(SBESLIBJAR) \
+		-junit=$$(JUNIT) -evosuite=$$(EVOSUITEJAR) -java7=$$(JAVA7BINDIR) \
 		-synthesis_budget=$$(SYNTHESIS_BUDGET) -counterexample_budget=$$(COUNTEREXAMPLE_BUDGET) \
 		-target_method='$(2)' \
+		-jbse=$$(JBSE) -jbse_jre=$$(SBESROOT)/data/jre/rt.jar \
+		-symbolic_counterexample -z3=/home/mattavelli/z3/bin/ \
+		-hex=$$(SBESROOT)/jbse_hex/stack_hex.jbse \
 		-test_scenario='../initial_scenario/InitialScenario.java' \
 		-stopping_condition=ITERATIONS -stopping_condition_value=20 > log 2>&1
 endef
@@ -75,11 +79,16 @@ $(SBESROOT): $(EVOSUITEJAR)
 	sh downloadTools.sh downloadFromSVN "sbes" "http://star.inf.usi.ch/repos/code/SBES/trunk/sbes/"
 
 .PHONY: sbes
-sbes: $(SBESJAR)
+sbes: $(SBESJAR) $(SBESLIB)
 $(SBESJAR): $(SBESROOT)
 	cd $(SBESROOT) ; \
 	$(ANT) ; \
-	$(JAR) cf sbes.jar -C bin .
+	$(JAR8) cf sbes.jar -C bin .
+
+$(SBESLIBJAR): $(SBESLIBROOT)
+	cd $(SBESLIBROOT) ; \
+	$(ANT) ; \
+	$(JAR7) cf sbes-lib.jar -C bin .
 
 #####################
 #### EvoSuite Build.

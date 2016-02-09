@@ -86,4 +86,10 @@ JUNIT=$(TOOLS)/junit.jar
 ##
 EVOSUITEROOT=$(TOOLS)/evosuite
 EVOSUITEJAR=$(EVOSUITEROOT)/target/evosuite-0.1-SNAPSHOT-jar-minimal.jar
-EVOSUITEREPO=https://andreamattavelli@bitbucket.org/andreamattavelli/evosuite-sbes
+EVOSUITEREPO=https://bitbucket.org/andreamattavelli/evosuite-sbes
+
+##
+## Z3
+##
+Z3ROOT=$(TOOLS)/z3
+Z3BIN=$(TOOLS)/z3/build

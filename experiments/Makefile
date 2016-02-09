@@ -33,7 +33,7 @@ class_methods = ${subst ],),${subst [,(,$(shell test -r $(class)/target_methods.
 run: $(foreach class,$(TARGETS),$(foreach method,$(class_methods),$(foreach iteration,$(ITERATIONS),$(class)/$(method)/$(iteration)/log)))
 
 define run_iteration
- $(1)/$(2)/$(3)/log: $(SBESJAR) $(SBESLIBJAR) $(EVOSUITEJAR) $(LIBS)/$(JARNAME) $(1)/$(2)/initial_scenario/InitialScenario.java
+ $(1)/$(2)/$(3)/log: $(SBESJAR) $(SBESLIBJAR) $(EVOSUITEJAR) $(Z3BIN) $(LIBS)/$(JARNAME) $(1)/$(2)/initial_scenario/InitialScenario.java
 	@echo "Running SBES on class $(1), method $(2), iteration $(3)"
 	-test -d '$(1)/$(2)/$(3)' || mkdir -p '$(1)/$(2)/$(3)'
 	-cd '$(1)/$(2)/$(3)' ; \
@@ -44,8 +44,6 @@ define run_iteration
 		-synthesis_budget=$$(SYNTHESIS_BUDGET) -counterexample_budget=$$(COUNTEREXAMPLE_BUDGET) \
 		-target_method='$(2)' \
 		-jbse=$$(JBSE) -jbse_jre=$$(SBESROOT)/data/jre/rt.jar \
-		-symbolic_counterexample -z3=/home/mattavelli/z3/bin/ \
-		-hex=$$(SBESROOT)/jbse_hex/stack_hex.jbse \
 		-test_scenario='../initial_scenario/InitialScenario.java' \
 		-stopping_condition=ITERATIONS -stopping_condition_value=20 > log 2>&1
 endef
@@ -74,7 +72,7 @@ data:
 #####################
 #### SBES Build.
 #####################
-$(SBESROOT): $(EVOSUITEJAR)
+$(SBESROOT):
 	cd $(TOOLS); \
 	sh downloadTools.sh downloadFromSVN "sbes" "http://star.inf.usi.ch/repos/code/SBES/trunk/sbes/"
 
@@ -107,6 +105,20 @@ $(EVOSUITEJAR): $(EVOSUITEROOT)
 	cd $(EVOSUITEROOT) ; \
 	JAVA_HOME=$(JAVA7ROOT) $(MAVEN) package
 
+#####################
+#### Z3 Build.
+#####################
+$(Z3ROOT):
+	cd $(TOOLS); \
+	sh downloadTools.sh downloadFromGit "z3" "https://github.com/Z3Prover/z3.git"
+
+.PHONY: z3
+z3: $(Z3BIN)
+$(Z3BIN): $(Z3ROOT)
+	cd $(Z3ROOT) ; \
+	python scripts/mk_make.py ;\
+	cd build ;\
+	make
 
 #####################
 #### Clean targets.

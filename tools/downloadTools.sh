@@ -14,14 +14,23 @@ downloadFromSVN() {
 }
 
 downloadFromMercurial() {
-	tool=$1
+    tool=$1
     if [ -d $tool ]; then
-	   echo "$tool already exists in tools directory. Removing $tool..."
-       rm -rf $tool
+	echo "$tool already exists in tools directory. Removing $tool..."
+	rm -rf $tool
     fi
    	echo "Downloading $tool..."
    	hg clone $2 $1
-	rm -rf $1/.hg
+}
+
+downloadFromGit() {
+    tool=$1
+    if [ -d $tool ]; then
+	echo "$tool already exists in tools directory. Removing $tool..."
+	rm -rf $tool
+    fi
+   	echo "Downloading $tool..."
+   	git clone $2 $1
 }
 
 $@

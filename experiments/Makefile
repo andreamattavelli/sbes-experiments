@@ -1,7 +1,7 @@
 ROOT=$(realpath ..)
 include $(ROOT)/common.mk
 
-PROJECT=java
+PROJECT?=java
 include $(PROJECT)/conf.mk
 
 .SILENT:
@@ -14,7 +14,8 @@ help:
 	"" \
 	"Clean targets:" \
 	"clean: do nothing. " \
-	"veryclean: removes all the results from all the classes in targets.txt. " \
+	"veryclean: removes all the results from all the classes of the specified project (make veryvlean PROJECT=...)." \
+	"veryveryclean: removes all the results from all the classes of all the projects." \
 	"clean_sbes: removes SBES (useful to update SBES)." \
 	"clean_evosuite: removes EvoSuite (useful to update EvoSuite)." ; \
 	do echo "$$line" ; done
@@ -130,6 +131,12 @@ clean:
 .PHONY: veryclean
 veryclean:
 	$(foreach class,$(TARGETS),$(foreach method,$(class_methods),$(shell find $(class)/'$(method)'/* -maxdepth 0 -type d ! -name "initial_scenario" | xargs rm -rf)))
+
+.PHONy: veryveryclean
+veryveryclean:
+	for PROJECT in $(PROJECTS); do \
+		$(MAKE) veryclean PROJECT=$$PROJECT; \
+	done
 
 .PHONY: clean_sbes
 clean_sbes:

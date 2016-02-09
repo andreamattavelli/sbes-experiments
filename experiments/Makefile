@@ -77,6 +77,9 @@ data:
 $(SBESROOT): $(EVOSUITEJAR)
 	cd $(TOOLS); \
 	sh downloadTools.sh downloadFromSVN "sbes" "http://star.inf.usi.ch/repos/code/SBES/trunk/sbes/"
+
+$(SBESLIBROOT):
+	cd $(TOOLS); \
 	sh downloadTools.sh downloadFromSVN "sbes-lib" "http://star.inf.usi.ch/repos/code/SBES/trunk/sbes-lib/"
 
 .PHONY: sbes

@@ -86,12 +86,12 @@ $(SBESLIBROOT):
 sbes: $(SBESJAR) $(SBESLIBJAR)
 $(SBESJAR): $(SBESROOT)
 	cd $(SBESROOT) ; \
-	$(ANT) ; \
+	JAVA_HOME=$(JAVA8ROOT) $(ANT) ; \
 	$(JAR8) cf sbes.jar -C bin .
 
 $(SBESLIBJAR): $(SBESLIBROOT)
 	cd $(SBESLIBROOT) ; \
-	$(ANT) ; \
+	JAVA_HOME=$(JAVA7ROOT) $(ANT) ; \
 	$(JAR7) cf sbes-lib.jar -C bin .
 
 #####################
@@ -105,7 +105,7 @@ $(EVOSUITEROOT):
 evosuite: $(EVOSUITEJAR)
 $(EVOSUITEJAR): $(EVOSUITEROOT)
 	cd $(EVOSUITEROOT) ; \
-	$(MAVEN) package
+	JAVA_HOME=$(JAVA7ROOT) $(MAVEN) package
 
 
 #####################

@@ -37,7 +37,7 @@ define run_iteration
 	@echo "Running SBES on class $(1), method $(2), iteration $(3)"
 	-test -d '$(1)/$(2)/$(3)' || mkdir -p '$(1)/$(2)/$(3)'
 	-cd '$(1)/$(2)/$(3)' ; \
-	$$(JAVA8) -cp $$(SBESJAR):$$(SBESLIBS) sbes.SBES \
+	$$(JAVA8) -Xmx4G -cp $$(SBESJAR):$$(SBESLIBS) sbes.SBES \
 		-classes=$$(LIBS)/$$(JARNAME) \
 		-sbes_lib=$$(SBESLIBJAR) \
 		-junit=$$(JUNIT) -evosuite=$$(EVOSUITEJAR) -java7=$$(JAVA7BINDIR) \

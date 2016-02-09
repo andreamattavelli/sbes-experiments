@@ -32,7 +32,7 @@ SHELL:=/bin/bash
 # Linux (research / allegro)
 JAVA8ROOT=/tools/jdk1.8.0_20
 # Mac (with java 1.6)
-#JAVA8ROOT=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents
+#JAVA8ROOT=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/
 #JAVA8ROOT=/System/Library/Frameworks/JavaVM.framework/Versions/Current
 
 # set java paths depending on the operating system
@@ -47,8 +47,10 @@ JAR8=$(JAVA8BINDIR)/jar
 ## JAVA7 (for EvoSuite)
 ##
 JAVA7ROOT=/tools/jdk1.7.0_05
+#JAVA7ROOT=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/
 JAVA7BINDIR=$(JAVA7ROOT)/bin
 JAVA7LIBDIR=$(JAVA7ROOT)/jre/lib
+JAVAC7=$(JAVA7BINDIR)/javac
 JAR7=$(JAVA7BINDIR)/jar
 
 ## 

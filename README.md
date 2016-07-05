@@ -90,3 +90,63 @@ The experimental setup generates two CSV files for each class `XYZ`:
 2. `max_counterexample_time_XYZ.csv` contains two different columns: first, an identifier composed of the pair <method name;iteration number>; second, the corresponding maximum time required to generate a counterexample (in seconds).
 
 By inspecting these CSV files it is possible to compute the maximum and the median time of all the reported experiments (to answer RQ3 in our FSE 2014 paper).
+
+#Applying SBES on New Case Studies
+Suppose that the new case study is contained in the jar archive `system.jar`.
+
+1. Put `system.jar` in the libraries folder
+
+  ```bash
+  # cp system.jar ~/SBES_Replication_Package/libraries
+  ```
+
+2. Create a new folder with a new configuration file for the new case study
+
+  ```bash
+  # cd ~/SBES_Replication_Package/experiments
+  # mkdir system
+  # nano system/conf.mk
+    JARNAME=system.jar
+  ```
+
+3. For each class that you want to analyze, you need to create a specific folder for that class. For example, if you want to analyze the class `Foo`, which is contained in `system.jar`:
+
+  ```bash
+   # cd ~/SBES_Replication_Package/experiments/system
+   # mkdir foo
+  ```
+
+4. Specify the list of methods of Foo that you want to consider:
+  ```bash
+   # cd ~/SBES_Replication_Package/experiments/system/foo
+   # nano target_methods.txt 
+  ```
+
+  It is necessary to write the complete method signature. However, due to compatibility problems with makefiles, it is necessary to replace parentheses with square brackets. For example:
+  
+  `system.Foo.method(Object,int,File)` → `system.Foo.method[Object,int,File]`
+  
+  Please notice that generic types are replaced with the Object class.
+  
+5. Create a directory in the class folder for each method specified in the `target_method.txt` file. The directory name must match the method name as specified in the file. In this case the parentheses are allowed.
+
+6. Generate an initial test scenario and put it in a directory named initial scenario. To generate an initial scenario you can either invoke your favorite test case generator, or write it manually.
+  ```bash
+   # cd ~/SBES_Replication_Package/experiments/system/foo/system.Foo.method\(Object,int,File\)
+   # mkdir initial_scenario ; cd initial_scenario
+   # nano InitialScenario.java
+  ```
+  ```java
+    package system;
+    import org.junit.Test;
+    public class FooTest {
+     @Test
+     public void test0 () { [...] }
+    }
+ ```
+ 
+7. Ultimately, run the experiment:
+  ```bash
+   # cd ~/SBES_Replication_Package/experiments/
+   # make PROJECT=system CLASS=system/foo
+  ```

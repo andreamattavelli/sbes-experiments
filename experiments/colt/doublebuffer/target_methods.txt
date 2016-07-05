@@ -1,0 +1,4 @@
+cern.colt.buffer.DoubleBuffer.add[double]
+cern.colt.buffer.DoubleBuffer.addAllOf[DoubleArrayList]
+cern.colt.buffer.DoubleBuffer.clear[]
+cern.colt.buffer.DoubleBuffer.flush[]

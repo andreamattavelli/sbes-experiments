@@ -1,0 +1,16 @@
+package colt;
+
+import org.junit.Test;
+
+public class AbstractDoubleIntMapTest {
+	@Test
+	public void test0() {
+		@Test(timeout = 4000)
+		  public void test00()  throws Throwable  {
+		       OpenDoubleIntHashMap openDoubleIntHashMap0 = new OpenDoubleIntHashMap(0);
+      DoubleArrayList doubleArrayList0 = new DoubleArrayList();
+      IntArrayList intArrayList0 = new IntArrayList();
+      openDoubleIntHashMap0.pairsMatching((DoubleIntProcedure) null, doubleArrayList0, intArrayList0);
+		  }
+	}
+}

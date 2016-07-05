@@ -17,11 +17,11 @@ This step-by-step tutorial focuses on how to run the experiments used to evaluat
 
 Please notice that a make command can be parallelized using the -j option (for further information, please refer to GNU make documentation).
 
-1. Go to the experiments folder: `# cd experiments`
+1. Go to the experiments folder: `$ cd experiments`
 2. Now you can run different types of experiments:
   * one single method at a time;
-  * one single class at a time (with all its methods); `# make PROJECT=java CLASS=java/stack`
-  * the whole set of experiments. `# make`
+  * one single class at a time (with all its methods); `$ make PROJECT=java CLASS=java/stack`
+  * the whole set of experiments. `$ make`
   
   The execution of the whole set of experiments depends on the content of the targets.txt file. The targets.txt file contains a list of classes to run. For each of those classes, the experimental infrastructure will execute all their methods. For example, a valid entry for the targets.txt file may be the following:
   
@@ -29,12 +29,12 @@ Please notice that a make command can be parallelized using the -j option (for f
   
   Regardless of the way you decide to run the experiment, each experiment on a method will be performed ITER times. This configuration allows a better understanding of the real capabilities of the overall synthesis process in identifying equivalent method sequences. If you want to limit the number of iterations, you can run all the aforementioned commands with the option ITER.
   
-  `# make ITER =10`
+  `$ make ITER =10`
 
   Currently, the experimental infrastructure is shipped with ITER=1.
   
   The execution of the current experimental process requires several hours (for example, it requires up to 20 hours on a server with 16 parallel jobs, that is with `-j16` option).
-3. To clean the experiments you can either erase all data `# make veryveryclean` or erase the data of all the classes of a particular project `# make veryclean PROJECT=java`
+3. To clean the experiments you can either erase all data `$ make veryveryclean` or erase the data of all the classes of a particular project `$ make veryclean PROJECT=java`
 
 #Examining the Results of the Experiments
 During the execution of the experiments, SBES stores two types of data:
@@ -43,14 +43,14 @@ During the execution of the experiments, SBES stores two types of data:
   
   To compute all the experiments data run the following command in the experiments directory:
   
-  `# make data`
+  `$ make data`
   
   Notice that the command requires more than one minute, depending on the disk speed.
   
   At the end of the computation there should be several new files in the experiments directory: one es.txt and some .csv files.
   
   ```bash
-  # cat targets.txt
+  $ cat targets.txt
     guava/arraylistmultimap
     guava/concurrenthashmultiset
     guava/hashbasedtable
@@ -65,7 +65,7 @@ In the experiments folder there should be one file named libraryname es.txt (whe
 Each libraryname es.txt file reports, for each triple of class-method-iteration, the list of synthesized equivalent sequences. For example:
 
 ```bash  
-# cat graphstream_es.txt
+$ cat graphstream_es.txt
 ========== graphstream/edge/org.graphstream.graph.implementations.AbstractEdge. addAttribute(String,Object)/1/log
 EqSeq1 clone.setAttribute(p0, p1);
 EqSeq2 clone.changeAttribute(p0, p1); [...]
@@ -97,29 +97,29 @@ Suppose that the new case study is contained in the jar archive `system.jar`.
 1. Put `system.jar` in the libraries folder
 
   ```bash
-  # cp system.jar ~/SBES_Replication_Package/libraries
+  $ cp system.jar ~/SBES_Replication_Package/libraries
   ```
 
 2. Create a new folder with a new configuration file for the new case study
 
   ```bash
-  # cd ~/SBES_Replication_Package/experiments
-  # mkdir system
-  # nano system/conf.mk
+  $ cd ~/SBES_Replication_Package/experiments
+  $ mkdir system
+  $ nano system/conf.mk
     JARNAME=system.jar
   ```
 
 3. For each class that you want to analyze, you need to create a specific folder for that class. For example, if you want to analyze the class `Foo`, which is contained in `system.jar`:
 
   ```bash
-   # cd ~/SBES_Replication_Package/experiments/system
-   # mkdir foo
+   $ cd ~/SBES_Replication_Package/experiments/system
+   $ mkdir foo
   ```
 
 4. Specify the list of methods of Foo that you want to consider:
   ```bash
-   # cd ~/SBES_Replication_Package/experiments/system/foo
-   # nano target_methods.txt 
+   $ cd ~/SBES_Replication_Package/experiments/system/foo
+   $ nano target_methods.txt 
   ```
 
   It is necessary to write the complete method signature. However, due to compatibility problems with makefiles, it is necessary to replace parentheses with square brackets. For example:
@@ -132,9 +132,9 @@ Suppose that the new case study is contained in the jar archive `system.jar`.
 
 6. Generate an initial test scenario and put it in a directory named initial scenario. To generate an initial scenario you can either invoke your favorite test case generator, or write it manually.
   ```bash
-   # cd ~/SBES_Replication_Package/experiments/system/foo/system.Foo.method\(Object,int,File\)
-   # mkdir initial_scenario ; cd initial_scenario
-   # nano InitialScenario.java
+   $ cd ~/SBES_Replication_Package/experiments/system/foo/system.Foo.method\(Object,int,File\)
+   $ mkdir initial_scenario ; cd initial_scenario
+   $ nano InitialScenario.java
   ```
   ```java
     package system;
@@ -147,6 +147,6 @@ Suppose that the new case study is contained in the jar archive `system.jar`.
  
 7. Ultimately, run the experiment:
   ```bash
-   # cd ~/SBES_Replication_Package/experiments/
-   # make PROJECT=system CLASS=system/foo
+   $ cd ~/SBES_Replication_Package/experiments/
+   $ make PROJECT=system CLASS=system/foo
   ```

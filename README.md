@@ -1,10 +1,10 @@
-#Stucture of the Experimental Environment
+#Structure of the Experimental Environment
 At the top level there are three folders and one file:
 
-* common.mk file containing all the framework-wide configurations;
-* experiments folder containing experiment-specific files;
-* libraries folder that contains the libraries subjects of the experiments;
-* tools all the tools, binaries, and scripts needed by SBES are in this folder.
+* `common.mk` file containing all the framework-wide configurations;
+* `experiments` folder containing experiment-specific files;
+* `libraries` folder that contains the libraries subjects of the experiments;
+* `tools` all the tools, binaries, and scripts needed by SBES are in this folder.
 
 The file `common.mk` lists all the configurations that need to be set before running SBES the first time. In particular, the setting of the variable `JAVAROOT` needs to be updated according to your specific system configuration. In some cases, also the variable `ANT` may need to be updated to reflect your system configuration.
 

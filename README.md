@@ -15,23 +15,46 @@ The folder experiments also contains the Makefile that handles the entire experi
 #Running the Experiments
 This step-by-step tutorial focuses on how to run the experiments used to evaluate our technique. All the commands presented in the tutorial will refer to the base directory of the experimental environment.
 
-Please notice that a make command can be parallelized using the -j option (for further information, please refer to GNU make documentation).
+Please notice that a make command can be parallelized using the `-j` option (for further information, please refer to GNU make documentation).
 
 1. Go to the experiments folder: `$ cd experiments`
 2. Now you can run different types of experiments:
   * one single method at a time;
-  * one single class at a time (with all its methods); `$ make PROJECT=java CLASS=java/stack`
-  * the whole set of experiments. `$ make`
+
+   ```bash
+   $ make PROJECT=java CLASS=java/stack TARGET_METHODS=stack.util.Stack.addElement\(Object\)
+   ```
+
+  * one single class at a time (with all its methods);
+
+   ```bash
+   $ make PROJECT=java CLASS=java/stack
+   ```
+
+  * the whole set of experiments.
+    
+   ```bash
+   $ make
+   ```
   
-  The execution of the whole set of experiments depends on the content of the targets.txt file. The targets.txt file contains a list of classes to run. For each of those classes, the experimental infrastructure will execute all their methods. For example, a valid entry for the targets.txt file may be the following:
+  The execution of the whole set of experiments depends on the content of the `targets.txt` file. The `targets.txt` file contains a list of classes to run. For each of those classes, the experimental infrastructure will execute all their methods. For example, a valid entry for the `targets.txt` file may be the following:
+
+  ```bash
+  $ cat targets.txt
+    guava/arraylistmultimap
+    guava/concurrenthashmultiset
+    guava/hashbasedtable
+    guava/hashmultimap
+    guava/hashmultiset
+  ```
+
+  The infrastructure will automatically retrieve the method list and execute all of them, either sequentially or in parallel (make `-j` option).
   
-  The infrastructure will automatically retrieve the method list and execute all of them, either sequentially or in parallel (make -j option).
-  
-  Regardless of the way you decide to run the experiment, each experiment on a method will be performed ITER times. This configuration allows a better understanding of the real capabilities of the overall synthesis process in identifying equivalent method sequences. If you want to limit the number of iterations, you can run all the aforementioned commands with the option ITER.
+  Regardless of the way you decide to run the experiment, each experiment on a method will be performed `ITER` times. This configuration allows a better understanding of the real capabilities of the overall synthesis process in identifying equivalent method sequences. If you want to limit the number of iterations, you can run all the aforementioned commands with the option `ITER`.
   
   `$ make ITER =10`
 
-  Currently, the experimental infrastructure is shipped with ITER=1.
+  Currently, the experimental infrastructure is shipped with `ITER=1`.
   
   The execution of the current experimental process requires several hours (for example, it requires up to 20 hours on a server with 16 parallel jobs, that is with `-j16` option).
 3. To clean the experiments you can either erase all data `$ make veryveryclean` or erase the data of all the classes of a particular project `$ make veryclean PROJECT=java`
@@ -43,26 +66,19 @@ During the execution of the experiments, SBES stores two types of data:
   
   To compute all the experiments data run the following command in the experiments directory:
   
-  `$ make data`
+  ```bash
+  $ make data
+  ```
   
   Notice that the command requires more than one minute, depending on the disk speed.
   
-  At the end of the computation there should be several new files in the experiments directory: one es.txt and some .csv files.
-  
-  ```bash
-  $ cat targets.txt
-    guava/arraylistmultimap
-    guava/concurrenthashmultiset
-    guava/hashbasedtable
-    guava/hashmultimap
-    guava/hashmultiset
-  ```
- 
+  At the end of the computation there should be several new files in the `experiments` directory: one `_es.txt` and some `.csv` files.
+
 > Due to a bug present in scripts (we will fix it sooner or later) the Python script will likely launch exceptions for experiments without log runs. Nevertheless, at the end of the execution the files for your experiment should be present in the experiments directory.
 
 ##Effectiveness
-In the experiments folder there should be one file named libraryname es.txt (where libraryname is the actual name of the library where you run the experiments).
-Each libraryname es.txt file reports, for each triple of class-method-iteration, the list of synthesized equivalent sequences. For example:
+In the experiments folder there should be one file named `libraryname_es.txt` (where `libraryname` is the actual name of the library where you run the experiments).
+Each `libraryname_es.txt` file reports, for each triple of class-method-iteration, the list of synthesized equivalent sequences. For example:
 
 ```bash  
 $ cat graphstream_es.txt
@@ -74,7 +90,7 @@ EqSeq2 clone.changeAttribute(p0, p1); [...]
 The manual inspection of this type of file allows the identification of true and false positives. The inspection also allows the generation of the data to fill both Table 1 and Table 2 (RQ1 and RQ2), and Table 4 (RQ4) in the paper.
 
 ##Efficiency
-SBES stores the time required to perform each step of the technique in a CSV file named output.csv. This file is stored in a directory with the same name as the current method under investigation (for example, stack.util.Stack.addElement(Object)) inside the iteration directory.
+SBES stores the time required to perform each step of the technique in a CSV file named `output.csv`. This file is stored in a directory with the same name as the current method under investigation (for example, `stack.util.Stack.addElement(Object)`) inside the iteration directory.
 
 The CSV file is structured as follows:
 

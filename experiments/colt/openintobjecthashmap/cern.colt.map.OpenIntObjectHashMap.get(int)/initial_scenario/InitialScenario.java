@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import cern.colt.map.OpenIntObjectHashMap;
 
-public class AbstractIntObjectMapTest {
+public class InitialScenario {
 	@Test
 	public void test0() throws Throwable {
 		OpenIntObjectHashMap openIntObjectHashMap0 = new OpenIntObjectHashMap(

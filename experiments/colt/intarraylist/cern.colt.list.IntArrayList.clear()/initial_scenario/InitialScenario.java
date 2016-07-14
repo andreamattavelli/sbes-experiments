@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import cern.colt.list.IntArrayList;
 
-public class IntArrayListTest {
+public class InitialScenario {
 	@Test
 	public void test0() {
 		ArrayList<Integer> arrayList0 = new ArrayList<Integer>();

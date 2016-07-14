@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import cern.colt.list.BooleanArrayList;
 
-public class AbstractBooleanListTest {
+public class InitialScenario {
 	@Test(timeout = 4000)
 	public void test0() {
 		BooleanArrayList booleanArrayList1 = new BooleanArrayList();

@@ -5,7 +5,7 @@ import org.junit.Test;
 import cern.colt.bitvector.BitVector;
 import cern.colt.list.MinMaxNumberList;
 
-public class AbstractMinMaxNumberListTest {
+public class InitialScenario {
 	@Test(timeout = 4000)
 	public void test0() throws Throwable {
 		long[] longArray0 = new long[9];

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import cern.colt.list.BooleanArrayList;
 
-public class AbstractBooleanListTest {
+public class InitialScenario {
 	@Test
 	public void test0() {
 		ArrayList<Boolean> arrayList0 = new ArrayList<Boolean>();

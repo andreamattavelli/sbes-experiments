@@ -5,7 +5,7 @@ import org.junit.Test;
 import cern.colt.function.IntDoubleProcedure;
 import cern.colt.map.OpenIntDoubleHashMap;
 
-public class AbstractIntDoubleMapTest {
+public class InitialScenario {
 	@Test
 	public void test0() throws Throwable {
 		OpenIntDoubleHashMap openIntDoubleHashMap0 = new OpenIntDoubleHashMap();

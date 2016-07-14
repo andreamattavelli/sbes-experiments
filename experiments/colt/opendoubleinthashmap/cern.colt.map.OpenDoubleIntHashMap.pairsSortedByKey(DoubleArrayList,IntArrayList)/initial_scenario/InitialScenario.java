@@ -6,7 +6,7 @@ import cern.colt.list.DoubleArrayList;
 import cern.colt.list.IntArrayList;
 import cern.colt.map.OpenDoubleIntHashMap;
 
-public class AbstractDoubleIntMapTest {
+public class InitialScenario {
 	@Test
 	public void test0() throws Throwable {
 		OpenDoubleIntHashMap openDoubleIntHashMap0 = new OpenDoubleIntHashMap();

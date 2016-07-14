@@ -8,7 +8,7 @@ import cern.colt.matrix.DoubleFactory1D;
 import cern.colt.matrix.DoubleMatrix1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 
-public class DoubleFactory1DTest {
+public class InitialScenario {
       @Test(timeout = 4000)
       public void test0() throws Throwable {
             DoubleFactory1D doubleFactory1D0 = DoubleFactory1D.dense;

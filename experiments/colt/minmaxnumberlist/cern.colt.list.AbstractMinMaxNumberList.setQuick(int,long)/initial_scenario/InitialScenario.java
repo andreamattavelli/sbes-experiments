@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import cern.colt.list.MinMaxNumberList;
 
-public class AbstractMinMaxNumberListTest {
+public class InitialScenario {
 	@Test(timeout = 4000)
 	public void test0() throws Throwable {
 		MinMaxNumberList minMaxNumberList0 = new MinMaxNumberList((-1L), (-1L),

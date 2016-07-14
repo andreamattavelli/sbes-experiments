@@ -2,7 +2,7 @@ package colt;
 
 import org.junit.Test;
 
-public class DoubleFactory1DTest {
+public class InitialScenario {
 	@Test(timeout = 4000)
 	public void test0() throws Throwable {
 		DoubleFactory1D doubleFactory1D0 = DoubleFactory1D.sparse;

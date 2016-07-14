@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import cern.colt.list.MinMaxNumberList;
 
-public class AbstractMinMaxNumberListTest {
+public class InitialScenario {
 	@SuppressWarnings("deprecation")
 	@Test(timeout = 4000)
 	public void test0() throws Throwable {

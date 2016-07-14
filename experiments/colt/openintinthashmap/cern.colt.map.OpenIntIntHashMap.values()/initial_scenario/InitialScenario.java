@@ -5,7 +5,7 @@ import org.junit.Test;
 import cern.colt.list.IntArrayList;
 import cern.colt.map.OpenIntIntHashMap;
 
-public class AbstractIntIntMapTest {
+public class InitialScenario {
 	@Test
 	public void test0() throws Throwable {
 		OpenIntIntHashMap openIntIntHashMap0 = new OpenIntIntHashMap();

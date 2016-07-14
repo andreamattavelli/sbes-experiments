@@ -6,7 +6,7 @@ import cern.colt.buffer.DoubleBuffer;
 import cern.colt.buffer.DoubleBufferConsumer;
 import cern.colt.list.DoubleArrayList;
 
-public class DoubleBufferTest {
+public class InitialScenario {
 	@Test
 	public void test0() {
 		DoubleArrayList doubleArrayList0 = new DoubleArrayList();

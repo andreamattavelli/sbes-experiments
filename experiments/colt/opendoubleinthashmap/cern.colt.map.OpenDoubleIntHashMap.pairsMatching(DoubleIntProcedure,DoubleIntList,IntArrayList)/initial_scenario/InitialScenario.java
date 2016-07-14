@@ -2,7 +2,7 @@ package colt;
 
 import org.junit.Test;
 
-public class AbstractDoubleIntMapTest {
+public class InitialScenario {
 	@Test
 	public void test0() {
 		@Test(timeout = 4000)

@@ -2,7 +2,7 @@ package colt;
 
 import org.junit.Test;
 
-public class AbstractLongObjectMapTest {
+public class InitialScenario {
 	@Test
 	public void test0() throws Throwable  {
            OpenLongObjectHashMap openLongObjectHashMap0 = new OpenLongObjectHashMap(1677);

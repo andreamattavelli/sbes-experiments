@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import cern.colt.map.OpenDoubleIntHashMap;
 
-public class AbstractDoubleIntMapTest {
+public class InitialScenario {
 	@Test
 	public void test0() {
 		OpenDoubleIntHashMap openDoubleIntHashMap0 = new OpenDoubleIntHashMap();

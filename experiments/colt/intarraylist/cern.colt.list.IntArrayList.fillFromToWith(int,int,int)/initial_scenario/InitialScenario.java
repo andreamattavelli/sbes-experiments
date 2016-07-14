@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import cern.colt.list.IntArrayList;
 
-public class IntArrayListTest {
+public class InitialScenario {
 	@Test(timeout = 4000)
 	public void test0() throws Throwable {
 		int[] intArray0 = new int[6];

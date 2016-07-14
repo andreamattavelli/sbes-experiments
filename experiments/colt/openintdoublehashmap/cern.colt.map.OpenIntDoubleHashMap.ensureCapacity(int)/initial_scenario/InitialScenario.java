@@ -7,7 +7,7 @@ import cern.colt.map.OpenIntDoubleHashMap;
 import cern.jet.random.AbstractDistribution;
 import cern.jet.random.Uniform;
 
-public class AbstractIntDoubleMapTest {
+public class InitialScenario {
       @Test
       public void test0() throws Throwable {
             OpenIntDoubleHashMap openIntDoubleHashMap0 = new OpenIntDoubleHashMap();

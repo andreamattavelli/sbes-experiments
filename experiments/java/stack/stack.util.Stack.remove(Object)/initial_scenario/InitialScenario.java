@@ -19,6 +19,6 @@ public class InitialScenario {
       boolean boolean0 = stack0.add(integer0);
       boolean boolean1 = stack0.add(integer1);
       boolean boolean2 = stack0.add(integer2);
-      boolean boolean3 = stack0.remove(55);
+      boolean boolean3 = stack0.remove(integer1);
   }
 }

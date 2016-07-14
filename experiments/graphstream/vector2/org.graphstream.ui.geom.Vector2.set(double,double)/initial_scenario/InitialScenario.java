@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.graphstream.ui.geom.Vector2;
 
-public class Vector2EvoSuiteTest {
+public class InitialScenario {
 
   @Test
   public void test0() throws Throwable  {

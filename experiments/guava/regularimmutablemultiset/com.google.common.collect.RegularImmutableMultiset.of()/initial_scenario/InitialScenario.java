@@ -18,6 +18,6 @@ public class InitialScenario {
 
   @Test
   public void test0()  throws Throwable  {
-    	RegularImmutableMultiset<Integer> map = RegularImmutableMultiset.of();
+    	ImmutableMultiset<Integer> map = RegularImmutableMultiset.<Integer>of();
   }
 }

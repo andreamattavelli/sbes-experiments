@@ -20,7 +20,7 @@ public class InitialScenario {
   public void test0()  throws Throwable  {
     	Integer integer0 = 1;
 		Integer integer1 = -141097;
-		RegularImmutableMultiset<Integer> map = RegularImmutableMultiset.of(integer0, integer1);
+		ImmutableMultiset<Integer> map = RegularImmutableMultiset.of(integer0, integer1);
 		boolean boolean0 = map.contains(integer0);
   }
 }

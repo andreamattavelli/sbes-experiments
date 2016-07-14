@@ -23,7 +23,7 @@ public class InitialScenario {
 		List<Integer> list = new ArrayList<Integer>();
 		list.add(integer0);
 		list.add(integer1);
-		RegularImmutableMultiset<Integer> map = RegularImmutableMultiset.of(integer0, integer1);
+		ImmutableMultiset<Integer> map = RegularImmutableMultiset.of(integer0, integer1);
 		boolean boolean0 = map.containsAll(list);
   }
 }

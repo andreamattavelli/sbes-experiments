@@ -21,6 +21,6 @@ public class InitialScenario {
     	Integer integer0 = 1;
 		Integer integer1 = -141097;
 		Integer integer2 = 867;
-		RegularImmutableMultiset<Integer> map = RegularImmutableMultiset.of(integer0, integer1, integer2);
+		ImmutableMultiset<Integer> map = RegularImmutableMultiset.<Integer>of(integer0, integer1, integer2);
   }
 }

@@ -17,7 +17,7 @@ mv $JARNAME ../..; \
 cd ../../..
 
 RETURN_VALUE=0
-for case in $LIBRARIES; do
+for case in ${LIBRARIES[@]}; do
   for file in `find experiments/$case -name "InitialScenario.java"`; do
   	echo $file
     javac -cp $CLASSPATH $file

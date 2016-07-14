@@ -9,7 +9,7 @@ import org.graphstream.graph.implementations.MultiGraph;
 import org.graphstream.graph.implementations.MultiNode;
 import org.graphstream.graph.implementations.SingleNode;
 
-public class AbstractEdgeEvoSuiteTest {
+public class InitialScenario {
 
   @Test
   public void test0()  throws Throwable  {

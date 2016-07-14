@@ -7,7 +7,7 @@ import org.graphstream.graph.implementations.MultiGraph;
 import org.graphstream.graph.implementations.MultiNode;
 import java.util.Collection;
 
-public class MultiNodeEvoSuiteTest {
+public class InitialScenario {
 
   @Test
   public void test0()  throws Throwable  {

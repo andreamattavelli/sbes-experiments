@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import stack.util.Stack;
 
-public class StackEvoSuiteTest {
+public class InitialScenario {
 
   @Test
   public void test0()  throws Throwable  {

@@ -10,7 +10,7 @@ import org.graphstream.graph.implementations.AbstractEdge;
 import org.graphstream.graph.implementations.AdjacencyListGraph;
 import org.graphstream.graph.implementations.SingleNode;
 
-public class AbstractEdgeEvoSuiteTest {
+public class InitialScenario {
 
 
   //Test case number: 0

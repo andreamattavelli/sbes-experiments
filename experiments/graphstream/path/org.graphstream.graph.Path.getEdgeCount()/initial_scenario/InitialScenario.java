@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.graphstream.graph.Path;
 import org.graphstream.graph.implementations.SingleGraph;
 
-public class AbstractEdgeEvoSuiteTest {
+public class InitialScenario {
 
   @Test
   public void test0()  throws Throwable  {

@@ -13,7 +13,7 @@ import org.junit.Test;
 
 import com.google.common.collect.ArrayListMultimap;
 
-public class StackEvoSuiteTest {
+public class InitialScenario {
 
   @Test
   public void test0()  throws Throwable  {

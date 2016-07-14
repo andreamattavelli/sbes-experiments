@@ -1,0 +1,12 @@
+---
+language: java
+
+install: true
+
+sudo: false
+
+jdk:
+  - oraclejdk7
+
+script:
+  - bash .travis/compile-scenarios.sh

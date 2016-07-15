@@ -1,21 +1,24 @@
 #!/bin/bash -x
 
-LIBRARIES=(guava graphstream java)
-CLASSPATH="tools/junit.jar:libraries/gs-core-1.2.jar:libraries/guava-12.0.1.jar:libraries/stack.jar"
+###############################################################################
+# Environmental settings
+###############################################################################
+LIBRARIES=(colt guava graphstream java)
+CLASSPATH="tools/junit.jar:libraries/colt-1.2.jar:libraries/gs-core-1.2.jar:libraries/guava-12.0.1.jar:libraries/stack.jar"
 
 ###############################################################################
 # Compile Java library
 ###############################################################################
-JARNAME="stack.jar"
-SOURCEDIR="libraries/java/src"
-
-cd $SOURCEDIR; \
+cd libraries/java/src; \
 SOURCES=`find -L . -name \*.java`; \
 javac -g $SOURCES; \
-jar cf $JARNAME stack/*; \
-mv $JARNAME ../..; \
+jar cf stack.jar stack/*; \
+mv stack.jar ../..; \
 cd ../../..
 
+###############################################################################
+# Run compilation for all the InitialScenario.java found
+###############################################################################
 RETURN_VALUE=0
 for case in ${LIBRARIES[@]}; do
   for file in `find experiments/$case -name "InitialScenario.java"`; do

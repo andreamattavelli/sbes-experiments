@@ -3,8 +3,8 @@
 ###############################################################################
 # Environmental settings
 ###############################################################################
-LIBRARIES=(colt guava graphstream java)
-CLASSPATH="tools/junit.jar:libraries/colt-1.2.jar:libraries/gs-core-1.2.jar:libraries/guava-12.0.1.jar:libraries/stack.jar"
+LIBRARIES=(colt commons-primitives guava graphstream java)
+CLASSPATH="tools/junit.jar:libraries/colt-1.2.jar:libraries/commons-primitives-1.1.jar:libraries/gs-core-1.2.jar:libraries/guava-12.0.1.jar:libraries/stack.jar"
 
 ###############################################################################
 # Compile Java library

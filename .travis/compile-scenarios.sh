@@ -22,7 +22,7 @@ cd ../../..
 RETURN_VALUE=0
 for case in ${LIBRARIES[@]}; do
   for file in `find experiments/$case -name "InitialScenario.java"`; do
-  	echo $file
+    echo $file | cut -d '/' -f4
     javac -cp $CLASSPATH $file
     if [ $? -ne 0 ]; then
     	RETURN_VALUE=1

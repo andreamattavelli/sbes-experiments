@@ -1,1 +1,1 @@
-JARNAME=commons-primitives-1.0.jar
+JARNAME=commons-primitives-1.1.jar

@@ -20,8 +20,7 @@ public class InitialScenario{
 	
 	Integer int0 = new Integer(34);
 	Integer int1 = new Integer(12);
-	boolean add0 = collection0.add(0,int0);
-	boolean add1 = collection0.add(0,int1);
-
+	boolean add0 = collection0.add(int0);
+	collection0.add(0,int1);
   }
 }

@@ -20,6 +20,6 @@ public class InitialScenario{
 	boolean add0 = collection0.add(char0);
 	boolean add1 = collection0.add(char1);
 	boolean add2 = collection0.add(char2);
-	boolean removeElementAt0 = collection0.removeElementAt(1);
+	char removeElementAt0 = collection0.removeElementAt(1);
   }
 }

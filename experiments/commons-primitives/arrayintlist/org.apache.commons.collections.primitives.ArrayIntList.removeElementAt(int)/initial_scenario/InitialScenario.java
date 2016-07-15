@@ -22,6 +22,6 @@ public class InitialScenario{
 	boolean add0 = collection0.add(int0);
 	boolean add1 = collection0.add(int1);
 	boolean add2 = collection0.add(int2);
-	boolean removeElementAt0 = collection0.removeElementAt(1);
+	int removeElementAt0 = collection0.removeElementAt(1);
   }
 }

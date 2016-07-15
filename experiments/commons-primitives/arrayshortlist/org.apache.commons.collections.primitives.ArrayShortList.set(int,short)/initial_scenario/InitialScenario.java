@@ -20,6 +20,6 @@ public class InitialScenario{
 	boolean add0 = collection0.add(short0);
 	boolean add1 = collection0.add(short1);
 	boolean add2 = collection0.add(short2);
-	boolean set0 = collection0.set(0,short1);
+	short set0 = collection0.set(0,short1);
   }
 }

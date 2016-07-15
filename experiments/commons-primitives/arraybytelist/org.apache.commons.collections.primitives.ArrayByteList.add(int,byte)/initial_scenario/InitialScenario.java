@@ -20,6 +20,6 @@ public class InitialScenario{
 	boolean add0 = collection0.add(byte0);
 	boolean add1 = collection0.add(byte1);
 	boolean add2 = collection0.add(byte2);
-	collection0.add(0,"25");
+	collection0.add(0,new Byte("25"));
   }
 }

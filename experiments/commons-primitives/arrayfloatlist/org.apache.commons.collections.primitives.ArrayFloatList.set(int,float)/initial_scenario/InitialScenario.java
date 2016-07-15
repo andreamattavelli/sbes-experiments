@@ -22,6 +22,6 @@ public class InitialScenario{
 	boolean add0 = collection0.add(float0);
 	boolean add1 = collection0.add(float1);
 	boolean add2 = collection0.add(float2);
-	boolean set0 = collection0.set(0,float1);
+	float set0 = collection0.set(0,float1);
   }
 }

@@ -21,6 +21,6 @@ public class InitialScenario{
 	boolean add0 = collection0.add(byte0);
 	boolean add1 = collection0.add(byte1);
 	boolean add2 = collection0.add(byte2);
-	boolean set0 = collection0.set(0,byte3);
+	byte set0 = collection0.set(0,byte3);
   }
 }

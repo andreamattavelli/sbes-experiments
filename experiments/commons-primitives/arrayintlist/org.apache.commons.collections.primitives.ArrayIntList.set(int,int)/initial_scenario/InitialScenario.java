@@ -22,6 +22,6 @@ public class InitialScenario{
 	boolean add0 = collection0.add(int0);
 	boolean add1 = collection0.add(int1);
 	boolean add2 = collection0.add(int2);
-	boolean set0 = collection0.set(0,int1);
+	int set0 = collection0.set(0,int1);
   }
 }

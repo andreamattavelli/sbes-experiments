@@ -22,6 +22,6 @@ public class InitialScenario{
 	byte add0 = stack0.push(byte0);
 	byte add1 = stack0.push(byte1);
 	byte add2 = stack0.push(byte2);
-	boolean stack0.empty();
+	boolean isempty = stack0.empty();
   }
 }

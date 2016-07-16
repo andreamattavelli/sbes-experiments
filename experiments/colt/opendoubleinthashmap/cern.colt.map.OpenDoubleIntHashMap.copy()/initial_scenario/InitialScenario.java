@@ -13,7 +13,7 @@ public class InitialScenario {
         .copy();
   }
 
-  @Test(timeout = 4000)
+  @Test
   public void test1() throws Throwable {
     OpenDoubleIntHashMap openDoubleIntHashMap0 = new OpenDoubleIntHashMap();
     OpenDoubleIntHashMap openDoubleIntHashMap1 = (OpenDoubleIntHashMap) openDoubleIntHashMap0

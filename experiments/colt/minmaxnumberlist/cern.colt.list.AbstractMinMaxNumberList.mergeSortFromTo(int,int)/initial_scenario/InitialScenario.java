@@ -6,7 +6,7 @@ import cern.colt.bitvector.BitVector;
 import cern.colt.list.MinMaxNumberList;
 
 public class InitialScenario {
-	@Test(timeout = 4000)
+	@Test
 	public void test0() throws Throwable {
 		long[] longArray0 = new long[9];
 		longArray0[2] = 1234234;

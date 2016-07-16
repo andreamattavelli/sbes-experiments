@@ -6,7 +6,7 @@ import cern.colt.list.AbstractBooleanList;
 import cern.colt.list.BooleanArrayList;
 
 public class InitialScenario {
-	@Test(timeout = 4000)
+	@Test
 	public void test0() throws Throwable {
 		boolean[] booleanArray0 = new boolean[6];
 		booleanArray0[2] = true;

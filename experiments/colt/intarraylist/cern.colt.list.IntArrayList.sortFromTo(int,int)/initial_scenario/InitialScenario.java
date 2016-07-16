@@ -5,7 +5,7 @@ import org.junit.Test;
 import cern.colt.list.IntArrayList;
 
 public class InitialScenario {
-  @Test(timeout = 4000)
+  @Test
   public void test0() throws Throwable {
     int[] intArray0 = new int[6];
     intArray0[2] = 1;
@@ -13,7 +13,7 @@ public class InitialScenario {
     intArrayList0.sortFromTo(2, 5);
   }
 
-  @Test(timeout = 4000)
+  @Test
   public void test1() throws Throwable {
     int[] expectedArray = new int[27];
     expectedArray[2] = 9;

@@ -8,7 +8,7 @@ import cern.colt.list.IntArrayList;
 import cern.colt.map.OpenDoubleIntHashMap;
 
 public class InitialScenario {
-	@Test(timeout = 4000)
+	@Test
 	public void test0() {
 		OpenDoubleIntHashMap openDoubleIntHashMap0 = new OpenDoubleIntHashMap(0);
 		DoubleArrayList doubleArrayList0 = new DoubleArrayList();

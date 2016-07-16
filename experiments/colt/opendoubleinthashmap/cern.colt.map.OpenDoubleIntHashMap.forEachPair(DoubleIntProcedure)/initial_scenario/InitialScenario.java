@@ -6,7 +6,7 @@ import cern.colt.function.DoubleIntProcedure;
 import cern.colt.map.OpenDoubleIntHashMap;
 
 public class InitialScenario {
-	@Test(timeout = 4000)
+	@Test
 	public void test0() {
 		OpenDoubleIntHashMap openDoubleIntHashMap0 = new OpenDoubleIntHashMap();
 		boolean boolean0 = openDoubleIntHashMap0

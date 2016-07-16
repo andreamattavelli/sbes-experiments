@@ -9,14 +9,14 @@ import cern.colt.list.IntArrayList;
 
 public class InitialScenario {
 
-  @Test(timeout = 4000)
+  @Test
   public void test0() throws Throwable {
     IntArrayList intArrayList0 = new IntArrayList();
     boolean int0 = intArrayList0.removeAll(intArrayList0);
     assertFalse(int0);
   }
 
-  @Test(timeout = 4000)
+  @Test
   public void test1() throws Throwable {
     IntArrayList intArrayList0 = new IntArrayList();
     IntArrayList intArrayList1 = intArrayList0.copy();
@@ -26,7 +26,7 @@ public class InitialScenario {
     assertFalse(int0);
   }
 
-  @Test(timeout = 4000)
+  @Test
   public void test2() throws Throwable {
     IntArrayList intArrayList0 = new IntArrayList(10);
     IntArrayList intArrayList1 = new IntArrayList();
@@ -39,14 +39,14 @@ public class InitialScenario {
     assertTrue(int0);
   }
 
-  @Test(timeout = 4000)
+  @Test
   public void test3() throws Throwable {
     IntArrayList intArrayList0 = new IntArrayList();
     boolean int0 = intArrayList0.removeAll(intArrayList0);
     assertFalse(int0);
   }
 
-  @Test(timeout = 4000)
+  @Test
   public void test4() throws Throwable {
     int[] intArray0 = new int[3];
     IntArrayList intArrayList0 = new IntArrayList(intArray0);
@@ -55,7 +55,7 @@ public class InitialScenario {
     assertTrue(int0);
   }
 
-  @Test(timeout = 4000)
+  @Test
   public void test5() throws Throwable {
     IntArrayList intArrayList0 = new IntArrayList();
     intArrayList0.add(8);

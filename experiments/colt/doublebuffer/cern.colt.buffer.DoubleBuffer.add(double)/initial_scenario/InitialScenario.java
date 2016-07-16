@@ -14,7 +14,7 @@ public class InitialScenario {
       doubleBuffer0.add(2.0);
   }
 
-    @Test(timeout = 4000)
+    @Test
   public void test1()  throws Throwable  {
       DoubleBuffer doubleBuffer0 = new DoubleBuffer((DoubleBufferConsumer) null, 1);
       doubleBuffer0.add(1780.771857);

@@ -5,14 +5,14 @@ import org.junit.Test;
 import cern.colt.list.BooleanArrayList;
 
 public class InitialScenario {
-	@Test(timeout = 4000)
+	@Test
 	public void test0() throws Throwable {
 		BooleanArrayList booleanArrayList0 = new BooleanArrayList();
 		booleanArrayList0.setSize(10);
 		int int0 = booleanArrayList0.indexOf(false);
 	}
 
-	@Test(timeout = 4000)
+	@Test
 	public void test1() throws Throwable {
 		BooleanArrayList booleanArrayList0 = new BooleanArrayList();
 		boolean[] booleanArray0 = new boolean[5];

@@ -5,7 +5,7 @@ import org.junit.Test;
 import cern.colt.list.BooleanArrayList;
 
 public class InitialScenario {
-  @Test(timeout = 4000)
+  @Test
   public void test2() throws Throwable {
     BooleanArrayList booleanArrayList0 = new BooleanArrayList(10);
     BooleanArrayList booleanArrayList1 = new BooleanArrayList();

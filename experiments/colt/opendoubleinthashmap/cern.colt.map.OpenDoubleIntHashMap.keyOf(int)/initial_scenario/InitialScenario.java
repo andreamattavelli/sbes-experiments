@@ -5,7 +5,7 @@ import org.junit.Test;
 import cern.colt.map.OpenDoubleIntHashMap;
 
 public class InitialScenario {
-	@Test(timeout = 4000)
+	@Test
 	public void test0() {
 		OpenDoubleIntHashMap openDoubleIntHashMap0 = new OpenDoubleIntHashMap(
 				1427, Double.NaN, Double.NaN);
@@ -13,7 +13,7 @@ public class InitialScenario {
 		double double0 = openDoubleIntHashMap0.keyOf(0);
 	}
 
-	@Test(timeout = 4000)
+	@Test
 	public void test01() throws Throwable {
 		OpenDoubleIntHashMap openDoubleIntHashMap0 = new OpenDoubleIntHashMap();
 		double double0 = openDoubleIntHashMap0.keyOf(687);

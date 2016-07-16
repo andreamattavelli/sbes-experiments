@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 public class InitialScenario {
-	@Test(timeout = 4000)
+	@Test
 	public void test0() throws Throwable {
 		long[] longArray0 = new long[9];
       DistinctNumberList distinctNumberList0 = new DistinctNumberList(longArray0, 0);

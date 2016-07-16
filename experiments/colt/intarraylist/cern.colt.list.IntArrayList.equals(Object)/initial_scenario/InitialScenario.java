@@ -5,7 +5,7 @@ import org.junit.Test;
 import cern.colt.list.IntArrayList;
 
 public class InitialScenario {
-  @Test(timeout = 4000)
+  @Test
   public void test2() throws Throwable {
     int[] intArray0 = new int[352345];
     IntArrayList intArrayList0 = new IntArrayList(intArray0);
@@ -14,7 +14,7 @@ public class InitialScenario {
     boolean int0 = intArrayList0.equals((Object) intArrayList1);
   }
 
-  @Test(timeout = 4000)
+  @Test
   public void test3() throws Throwable {
     int[] intArray0 = new int[3];
     IntArrayList intArrayList0 = new IntArrayList(intArray0);
@@ -22,7 +22,7 @@ public class InitialScenario {
     boolean int0 = intArrayList1.equals((Object) intArrayList0);
   }
 
-  @Test(timeout = 4000)
+  @Test
   public void test4() throws Throwable {
     int[] intArray0 = new int[6];
     IntArrayList intArrayList0 = new IntArrayList(intArray0);

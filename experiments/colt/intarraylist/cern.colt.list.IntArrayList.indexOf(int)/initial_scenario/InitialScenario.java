@@ -5,14 +5,14 @@ import org.junit.Test;
 import cern.colt.list.IntArrayList;
 
 public class InitialScenario {
-	@Test(timeout = 4000)
+	@Test
 	public void test0() throws Throwable {
 		IntArrayList intArrayList0 = new IntArrayList();
 		intArrayList0.setSize(10);
 		int int0 = intArrayList0.indexOf(0);
 	}
 
-	@Test(timeout = 4000)
+	@Test
 	public void test1() throws Throwable {
 		IntArrayList intArrayList0 = new IntArrayList();
 		int[] intArray0 = new int[5];

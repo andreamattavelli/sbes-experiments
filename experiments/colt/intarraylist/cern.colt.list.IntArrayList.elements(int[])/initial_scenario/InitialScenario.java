@@ -6,7 +6,7 @@ import cern.colt.list.AbstractIntList;
 import cern.colt.list.IntArrayList;
 
 public class InitialScenario {
-	@Test(timeout = 4000)
+	@Test
 	public void test0() {
 		int[] intArray0 = new int[6];
 		intArray0[1] = 1;

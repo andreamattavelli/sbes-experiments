@@ -2,6 +2,9 @@ package colt;
 
 import org.junit.Test;
 
+import cern.colt.list.LongArrayList;
+import cern.colt.map.OpenLongObjectHashMap;
+
 public class InitialScenario {
 	@Test
 	public void test0() throws Throwable  {

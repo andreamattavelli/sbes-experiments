@@ -1,16 +1,19 @@
 package colt;
 
-import java.util.ArrayList;
-
 import org.junit.Test;
+
+import cern.colt.bitvector.BitVector;
+import cern.colt.list.DistinctNumberList;
+import cern.colt.list.MinMaxNumberList;
 
 public class InitialScenario {
 	@Test
 	public void test0() throws Throwable {
-		long[] longArray0 = new long[7];
-      DistinctNumberList distinctNumberList0 = new DistinctNumberList(longArray0, 0);
-      MinMaxNumberList minMaxNumberList0 = distinctNumberList0.elements;
-      minMaxNumberList0.capacity = 784;
-        minMaxNumberList0.toBitVector();
+	  MinMaxNumberList minMaxNumberList0 = new MinMaxNumberList(0l, 12345l, 10);
+      minMaxNumberList0.add(0l);
+      minMaxNumberList0.add(8491l);
+      minMaxNumberList0.add(1055l);
+      minMaxNumberList0.add(190l);
+      minMaxNumberList0.toBitVector();
 	}
 }

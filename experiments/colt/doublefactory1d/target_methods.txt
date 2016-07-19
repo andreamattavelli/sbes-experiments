@@ -1,6 +1,5 @@
 cern.colt.matrix.DoubleFactory1D.append[DoubleMatrix1D,DoubleMatrix1D]
 cern.colt.matrix.DoubleFactory1D.ascending[int]
-cern.colt.matrix.DoubleFactory1D.clone[]
 cern.colt.matrix.DoubleFactory1D.descending[int]
 cern.colt.matrix.DoubleFactory1D.make[AbstractDoubleList]
 cern.colt.matrix.DoubleFactory1D.make[int]

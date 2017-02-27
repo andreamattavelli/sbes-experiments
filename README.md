@@ -1,4 +1,4 @@
-#Structure of the Experimental Environment [![Build Status](https://travis-ci.org/andreamattavelli/synthesis-experiments.svg?branch=master)](https://travis-ci.org/andreamattavelli/synthesis-experiments)
+#Structure of the Experimental Environment [![Build Status](https://travis-ci.com/andreamattavelli/synthesis-experiments.svg?token=Ur9HUsDar1wFwVPGCRdM&branch=master)](https://travis-ci.org/andreamattavelli/synthesis-experiments)
 At the top level there are three folders and one file:
 
 * `common.mk` file containing all the framework-wide configurations;
